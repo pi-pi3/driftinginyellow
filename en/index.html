@@ -38,7 +38,7 @@
                 $handle1 = fopen($filename, "r");
                 $contents = fread($handle, filesize($filename));
                 fclose($handle1);
-                echo "<article>$contents</article>";
+                echo $contents;
             }
             if (!feof($handle)) {
                 echo "Error: unexpected fgets() fail\n";
