@@ -30,15 +30,21 @@
         </span>
     </div>
 
-    <article>
-    <header>
-    <h1>Drifting in Yellow</h1>
-    <aside>
-        Abstract
-    </aside>
-    Diese Seite is wip (30.04.17). Artikel und posts kommen morgen. <br>
-    Es gibt hier keine Werbungen, deshalb muss sich keiner Stress machen.
-    </header>
-    </article>
+    <?php
+        $articles = "articles";
+        $handle = fopen(articles, "r");
+        if ($handle) {
+            while (($filename = fgets($handle, 4096)) !== false) {
+                $handle1 = fopen($filename, "r");
+                $contents = fread($handle, filesize($filename));
+                fclose($handle1);
+                echo $contents;
+            }
+            if (!feof($handle)) {
+                echo "Error: unexpected fgets() fail\n";
+            }
+            fclose($handle);
+        }
+    ?>
 </body>
 </html>
