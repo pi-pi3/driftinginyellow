@@ -35,10 +35,11 @@
         $handle = fopen(articles, "r");
         if ($handle) {
             while (($filename = fgets($handle, 4096)) !== false) {
+                $filename = trim($filename);
                 $handle1 = fopen($filename, "r");
-                $contents = fread($handle, filesize($filename));
+                $contents = fread($handle1, filesize($filename));
                 fclose($handle1);
-                echo $contents;
+                echo "<article>$contents</article";
             }
             if (!feof($handle)) {
                 echo "Error: unexpected fgets() fail\n";
