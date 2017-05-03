@@ -26,7 +26,7 @@
         <span class="right">
             <a href="/en/about">About</a>
             <a href="/en/contact">Contact</a>
-            <a href="/de/about/">de</a>
+            <a href="/de/">de</a>
         </span>
     </div>
 
