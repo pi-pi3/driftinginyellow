@@ -1,34 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>Drifting in Yellow</title>
-    <link rel="stylesheet" type="text/css" href="/pub/style.css">
-</head>
-<body>
-    <div id="header">
-        <!--<a href="/en/"><img width=64em src="/logo.svg"/></a>-->
-        <a href="/en/">driftinginyellow</a> 
-        <span id="headerSubtitle">
-            Other
-        </span>
-    </div>
+<?php
+    $lang = 'en'
 
-    <div id="menu">
-        <span class="left">
-            <a class="thisSite" href="/en/">home</a>
-            <a href="/en/games">Games</a>
-            <a href="/en/other">Other</a>
-            <a href="/en/cv">Curriculum Vitae</a>
-        </span>
-        <span class="right">
-            <a href="/en/about">About</a>
-            <a href="/en/contact">Contact</a>
-            <a href="/de/other/">de</a>
-        </span>
-    </div>
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/pub/preload.php';
+
+    $page['subtitle'] = 'Other';
+    $page['name'] = 'other';
+
+    include $template['header'];
+?>
 
     <article>
     <header>
@@ -110,5 +89,7 @@
     <h3>Downloads</h3>
     <a href="https://gitlab.com/pi_pi3/phong-demo">phong-demo</a>
     </article>
-</body>
-</html>
+
+<?php
+    include $template['footer'];
+?>

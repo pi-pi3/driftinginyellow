@@ -1,34 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>Drifting in Yellow</title>
-    <link rel="stylesheet" type="text/css" href="/pub/style.css">
-</head>
-<body>
-    <div id="header">
-        <!--<a href="/en/"><img width=64em src="/logo.svg"/></a>-->
-        <a href="/en/">driftinginyellow</a> 
-        <span id="headerSubtitle">
-            Contact
-        </span>
-    </div>
+<?php
+    $lang = 'en'
 
-    <div id="menu">
-        <span class="left">
-            <a class="thisSite" href="/en/">home</a>
-            <a href="/en/games">Games</a>
-            <a href="/en/other">Other</a>
-            <a href="/en/cv">Curriculum Vitae</a>
-        </span>
-        <span class="right">
-            <a href="/en/about">About</a>
-            <a href="/en/contact">Contact</a>
-            <a href="/de/contact/">de</a>
-        </span>
-    </div>
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/pub/preload.php';
+
+    $page['subtitle'] = 'Contact';
+    $page['name'] = 'contact';
+
+    include $template['header'];
+?>
 
     <article>
     <header>
@@ -87,5 +66,7 @@
     Feel free to follow me or add me to your friends; if you don't look like a
     bot or a malicious person to me, I'll likely reply.
     </article>
-</body>
-</html>
+
+<?php
+    include $template['footer'];
+?>

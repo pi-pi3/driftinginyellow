@@ -1,34 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>Drifting in Yellow</title>
-    <link rel="stylesheet" type="text/css" href="/pub/style.css">
-</head>
-<body>
-    <div id="header">
-        <!--<a href="/en/"><img width=64em src="/logo.svg"/></a>-->
-        <a href="/en/">driftinginyellow</a> 
-        <span id="headerSubtitle">
-            Curriculum Vitae
-        </span>
-    </div>
+<?php
+    $lang = 'en'
 
-    <div id="menu">
-        <span class="left">
-            <a class="thisSite" href="/en/">home</a>
-            <a href="/en/games">Games</a>
-            <a href="/en/other">Other</a>
-            <a href="/en/cv">Curriculum Vitae</a>
-        </span>
-        <span class="right">
-            <a href="/en/about">About</a>
-            <a href="/en/contact">Contact</a>
-            <a href="/de/cv/">de</a>
-        </span>
-    </div>
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/pub/preload.php';
+
+    $page['subtitle'] = 'Curriculum Vitae';
+    $page['name'] = 'cv';
+
+    include $template['header'];
+?>
 
     <article>
         <h1>Personal details</h1>
@@ -173,5 +152,7 @@
             <li>Films</li>
         </ul>
     </article>
-</body>
-</html>
+
+<?php
+    include $template['footer'];
+?>
