@@ -1,5 +1,5 @@
 <?php
-    $lang = 'en'
+    $lang = 'en';
 
     require_once $_SERVER['DOCUMENT_ROOT'] . '/pub/preload.php';
 
