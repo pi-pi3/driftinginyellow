@@ -1,10 +1,10 @@
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT'] . 'pub/template.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/pub/preload.php';
 
-    echo $template['header'];
+    include $template['header'];
 
     $articles = "articles";
-    $handle = fopen(articles, "r");
+    $handle = fopen($articles, "r");
     if ($handle) {
         while (($filename = fgets($handle, 4096)) !== false) {
             $filename = trim($filename);
@@ -19,5 +19,5 @@
         fclose($handle);
     }
 
-    echo $template['footer'];
+    include $template['footer'];
 ?>
