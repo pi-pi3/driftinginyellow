@@ -18,14 +18,14 @@
 
     <div id="menu">
         <span class="left">
-            <a class="thisSite" href="/<?php echo $page['lang'] ?>/">home</a>
-            <a href="/<?php echo $page['lang'] ?>/games">Games</a>
-            <a href="/<?php echo $page['lang'] ?>/other">Other</a>
-            <a href="/<?php echo $page['lang'] ?>/cv">Curriculum Vitae</a>
+            <a class="thisSite" href="/<?php echo $page['lang'] ?>/"><?php echo $locale['home'] ?></a>
+            <a href="/<?php echo $page['lang'] ?>/games"><?php echo $locale['games'] ?></a>
+            <a href="/<?php echo $page['lang'] ?>/other"><?php echo $locale['other'] ?></a>
+            <a href="/<?php echo $page['lang'] ?>/cv"><?php echo $locale['cv'] ?></a>
         </span>
         <span class="right">
-            <a href="/<?php echo $page['lang'] ?>/about">About</a>
-            <a href="/<?php echo $page['lang'] ?>/contact">Contact</a>
+            <a href="/<?php echo $page['lang'] ?>/about"><?php echo $locale['about'] ?></a>
+            <a href="/<?php echo $page['lang'] ?>/contact"><?php echo $locale['contact'] ?></a>
 	    <a href="/<?php echo $page['nlang'] ?>/<?php if (!empty($page['name'])) echo $page['name'] . "/" ?>"><?php echo $page['nlang'] ?></a>
         </span>
     </div>
