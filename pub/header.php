@@ -26,7 +26,7 @@
         <span class="right">
             <a href="/<?php echo $page['lang'] ?>/about">About</a>
             <a href="/<?php echo $page['lang'] ?>/contact">Contact</a>
-	    <a href="/<?php echo $page['nlang'] ?>/<?php echo $page['name'] ?>"><?php echo $page['nlang'] ?></a>
+	    <a href="/<?php echo $page['nlang'] ?>/<?php if (!empty($page['name'])) echo $page['name'] . "/" ?>"><?php echo $page['nlang'] ?></a>
         </span>
     </div>
 
