@@ -29,4 +29,5 @@
     $template = array();
     $template['header'] = __DIR__ . '/header.php';
     $template['footer'] = __DIR__ . '/footer.php';
+    $template['blog'] = __DIR__ . '/blog.php';
 ?>
