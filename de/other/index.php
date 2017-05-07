@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>Drifting in Yellow</title>
-    <link rel="stylesheet" type="text/css" href="/pub/style.css">
+    <link rel="stylesheet" type="text/css" href="/_pub/style.css">
 </head>
 <body>
     <div id="header">
