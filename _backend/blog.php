@@ -5,8 +5,8 @@
         while (($line = fgets($handle, 4096)) !== false) {
             $line = explode(' ', $line, 2);
             $timestamp = trim($line[0]);
-            $time = gmdate('H:i:s', intval($timestamp));
-            $date = gmdate('l jS \of F, Y', intval($timestamp));
+            $date = new DateTime('@' . $timestamp);
+            $date = $date->format('H:i:s' . "\n" . 'l jS \of F, Y');
 
             $filename = $line[1];
             $filename = trim($filename);
@@ -32,7 +32,7 @@
             // TODO: truncate contents to `n` words on main page
             echo "<article>";
             echo $header;
-            echo "<p style=\"font-size: 75%\">$date<br>$time<br>";
+            echo "<p style=\"font-size: 75%\">$date<br>";
             echo "A $minutes $m read</p>";
             echo '</header>';
             echo $contents;
