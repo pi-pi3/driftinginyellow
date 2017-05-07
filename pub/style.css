@@ -38,17 +38,21 @@ article {
     border-bottom: 1px solid #dadada;
 }
 
+article ul {
+    list-style-type: none;
+}
+
 header {
     margin-bottom: 1ex;
+}
+
+header p {
+    color: #777;
 }
 
 aside {
     font-size: 1.1em;
     margin-bottom: -1.25ex;
-}
-
-header p {
-    color: #777;
 }
 
 #header {
