@@ -1,7 +1,7 @@
 <?php
     $lang = 'en';
 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/_pub/preload.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
 
     $page['subtitle'] = 'Contact';
     $page['name'] = 'contact';
