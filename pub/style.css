@@ -47,6 +47,10 @@ aside {
     margin-bottom: -1.25ex;
 }
 
+header p {
+    color: #777;
+}
+
 #header {
     clear: both;
     color: #666666;
