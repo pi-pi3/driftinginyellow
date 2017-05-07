@@ -1,7 +1,7 @@
 <?php
     $lang = 'en';
 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/pub/preload.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
 
     $page['subtitle'] = 'Something\'s wrong here...';
     $page['name'] = '';
@@ -18,13 +18,11 @@
             404
         </div>
         <div style="float:right;width:85%;">
-            <p>
-                This isn't what you're looking for? We're very sorry. It seems
-                there was an error. We couldn't find site you requested. 
-            </p>
+            This isn't what you're looking for? We're very sorry. It seems
+            there was an error. We couldn't find site you requested. 
         </div>
         <p>
-            Maybe you should try going back <a href="/en/home">home</a>.
+            Maybe you should try going back <a href="/en/">home</a>.
             Or maybe you want to <a href="/en/contact">contact</a> the
             administrator?
         </p>

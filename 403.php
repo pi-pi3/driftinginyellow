@@ -1,7 +1,7 @@
 <?php
     $lang = 'en';
 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/pub/preload.php';
+    require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
 
     $page['subtitle'] = 'Something\'s wrong here...';
     $page['name'] = '';
@@ -18,12 +18,10 @@
             403
         </div>
         <div style="float:right;width:85%;">
-            <p>
-                What are you doing here? This is private property!
-            </p>
+            What are you doing here? This is private property!
         </div>
         <p>
-            Go back home <a href="/en/home">home</a>! <br>
+            Go back home <a href="/en/">home</a>! <br>
             Still here? Try <a href="/en/contact">contacting</a> the
             administrator. He might be able to help you.
         </p>
