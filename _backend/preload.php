@@ -13,7 +13,7 @@
 
         $locale['home'] = 'home';
         $locale['games'] = 'Games';
-        $locale['other'] = 'other';
+        $locale['other'] = 'Other';
         $locale['cv'] = 'Curriculum Vitae';
         $locale['about'] = 'About';
         $locale['contact'] = 'Contact';
