@@ -13,7 +13,7 @@
         <h1>Personal details</h1>
 
         <div style="float:left;width:30%;">
-            <ul style="list-style-type:none">
+            <ul>
                 <li>Full name</li>
                 <li>Birth date</li>
                 <li>Birth place</li>
@@ -25,7 +25,7 @@
         </div>
 
         <div style="float:right;width:70%;">
-            <ul style="list-style-type:none">
+            <ul>
                 <li>Szymon Walter</li>
                 <li>18th April 1998</li>
                 <li>Wrocław</li>
@@ -41,7 +41,7 @@
         <h1>Education</h1>
 
         <div style="float:left;width:50%;">
-            <ul style="list-style-type:none">
+            <ul>
                 <li>Szkoła podstawowa w Czerniawie</li>
                 <li>Szkoła podstawowa w Smolniku</li>
                 <li>Scharmützelsee-Grundschule</li>
@@ -51,7 +51,7 @@
         </div>
 
         <div style="float:right;width:50%;">
-            <ul style="list-style-type:none">
+            <ul>
                 <li>2005 - 2006</li>
                 <li>2006 - 2008</li>
                 <li>2008 - 2009</li>
@@ -62,9 +62,9 @@
 
         <h1>Experiences</h1>
 
-        <ul style="list-style-type:none">
+        <ul>
             <li>8 time Ludum Dare participant</li>
-            <ul style="list-style-type:none">
+            <ul>
                 <li>6 times compo (alone)</li>
                 <li>1 times jam (alone)</li>
                 <li>1 times jam (team)</li>
@@ -73,8 +73,37 @@
 
         <h1>Skills</h1>
 
+        <h3>General</h3>
+
+        <ul>
+            <li>Problem solving</li>
+            <li>Interpersonal abilities</li>
+            <li>Creativity in work</li>
+            <li>Collaboration over all</li>
+        </ul>
+
+        <h3>Languages</h3>
+
         <div style="float:left;width:30%;">
-            <ul style="list-style-type:none">
+            <ul>
+                <li>Polish</li>
+                <li>German</li>
+                <li>English</li>
+            </ul>
+        </div>
+
+        <div style="float:right;width:70%;">
+            <ul>
+                <li>Native</li>
+                <li>Fluent</li>
+                <li>Fluent</li>
+            </ul>
+        </div>
+
+        <h3>Computer related</h3>
+
+        <div style="float:left;width:30%;">
+            <ul>
                 <li>LibreOffice</li>
                 <li>Git</li>
                 <li>Blender</li>
@@ -84,7 +113,7 @@
         </div>
 
         <div style="float:right;width:70%;">
-            <ul style="list-style-type:none">
+            <ul>
                 <li>Proficient</li>
                 <li>Proficient</li>
                 <li>Beginner</li>
@@ -93,28 +122,10 @@
             </ul>
         </div>
 
-        <h3>Languages</h3>
+        <h4>Programming</h4>
 
         <div style="float:left;width:30%;">
-            <ul style="list-style-type:none">
-                <li>Polish</li>
-                <li>German</li>
-                <li>English</li>
-            </ul>
-        </div>
-
-        <div style="float:right;width:70%;">
-            <ul style="list-style-type:none">
-                <li>Native</li>
-                <li>Fluent</li>
-                <li>Fluent</li>
-            </ul>
-        </div>
-
-        <h3>Programming</h3>
-
-        <div style="float:left;width:30%;">
-            <ul style="list-style-type:none">
+            <ul>
                 <li>C/C++</li>
                 <li>Rust</li>
                 <li>Haskell</li>
@@ -125,7 +136,7 @@
         </div>
 
         <div style="float:right;width:70%;">
-            <ul style="list-style-type:none">
+            <ul>
                 <li>Intermediate</li>
                 <li>Intermediate</li>
                 <li>Beginner</li>
@@ -136,9 +147,9 @@
         </div>
 
         <h1>Interests</h1>
-        <ul style="list-style-type:none">
+        <ul>
             <li>Computer sciences</li>
-            <ul style="list-style-type:none">
+            <ul>
                 <li>Backend programming</li>
                 <li>Systems programming</li>
                 <li>Game development</li>
@@ -146,7 +157,7 @@
             <li>Mathematics</li>
             <li>Physics</li>
             <li>Games</li>
-            <ul style="list-style-type:none">
+            <ul>
                 <li>Board games &amp; video games</li>
             </ul>
             <li>Films</li>
