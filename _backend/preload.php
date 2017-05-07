@@ -1,4 +1,6 @@
 <?php
+    date_default_timezone_set('Europe/Berlin');
+
     $page = array();
 
     $page['subtitle'] = 'Bringing yellow stars and games together since 1998...';
