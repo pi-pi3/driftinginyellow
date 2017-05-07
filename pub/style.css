@@ -39,11 +39,12 @@ article {
 }
 
 header {
-    margin-bottom: 2ex;
+    margin-bottom: 1ex;
 }
 
 aside {
     font-size: 1.1em;
+    margin-bottom: -1.25ex;
 }
 
 #header {
