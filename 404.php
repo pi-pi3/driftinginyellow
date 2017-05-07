@@ -14,10 +14,15 @@
         <h1>Hi there!</h1>
         </header>
         
-        <p>
-            This isn't what you're looking for? We're very sorry. It seems
-            there was an error. We couldn't find site you requested. 
-        </p>
+        <div style="float:left;width:15%;font-size:200%;">
+            404
+        </div>
+        <div style="float:right;width:85%;">
+            <p>
+                This isn't what you're looking for? We're very sorry. It seems
+                there was an error. We couldn't find site you requested. 
+            </p>
+        </div>
         <p>
             Maybe you should try going back <a href="/en/home">home</a>.
             Or maybe you want to <a href="/en/contact">contact</a> the

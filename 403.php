@@ -14,9 +14,14 @@
         <h1>Woah!</h1>
         </header>
         
-        <p>
-            What are you doing here? This is private property!
-        </p>
+        <div style="float:left;width:15%;font-size:200%;">
+            403
+        </div>
+        <div style="float:right;width:85%;">
+            <p>
+                What are you doing here? This is private property!
+            </p>
+        </div>
         <p>
             Go back home <a href="/en/home">home</a>! <br>
             Still here? Try <a href="/en/contact">contacting</a> the
