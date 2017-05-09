@@ -72,7 +72,7 @@
         if ($full) {
             echo $contents;
         } else {
-            echo trunc($contents);
+            echo trunc($contents), '(...)';
             $id = null;
             preg_match("/^$path\/(.*)\.[^\.]+$/", $filename, $id);
             $id = $id[1];
