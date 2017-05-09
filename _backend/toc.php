@@ -2,9 +2,7 @@
 if ($toc_nav) {
     echo '<div id="nav">';
 }
-?>
 
-<?php
 echo '<ol>';
 $level = 1;
 foreach ($nav as $h) {
@@ -20,9 +18,7 @@ foreach ($nav as $h) {
     echo '</a>';
 }
 echo '</ol>';
-?>
 
-<?php
 if ($toc_nav) {
     echo '</div>';
 }

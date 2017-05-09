@@ -50,14 +50,14 @@ function header_name($name, $level) {
 }
 
 function h1($name) {
-    header_name($name, 1)
+    header_name($name, 1);
 }
 
 function h2($name) {
-    header_name($name, 2)
+    header_name($name, 2);
 }
 
 function h3($name) {
-    header_name($name, 3)
+    header_name($name, 3);
 }
 ?>
