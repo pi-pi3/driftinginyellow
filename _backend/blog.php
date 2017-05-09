@@ -94,7 +94,8 @@
             $filename = trim($line[1]);
 
             if ($blog_articles == null || $blog_articles[$filename]) {
-                render_article("$blog_path/" . $filename, $timestamp, $blog_full);
+                render_article("$blog_path/" . $filename, $timestamp,
+                               $blog_full);
             }
         }
         if (!feof($handle)) {
