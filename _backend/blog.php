@@ -80,14 +80,8 @@ function render_article($filename, $timestamp, $full, $path) {
         $id = null;
         preg_match("/^$path\/(.*)\.[^\.]+$/", $filename, $id);
         $id = $id[1];
-        global $blog_blogindex;
-        if ($blog_blogindex) {
-            $blogpath = $blog_blogindex;
-        } else {
-            $blogpath = $path;
-        }
         echo '<p style="font-size: 80%;">';
-        echo "<a href=\"$blogpath/?id=$id\">Read more...</a>";
+        echo "<a href=\"?id=$id\">Read more...</a>";
         echo '</p>';
     }
     echo '</article>';

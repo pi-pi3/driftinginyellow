@@ -15,7 +15,6 @@ if (isset($_GET['id'])) {
 }
 
 $blog_path = 'others';
-$blog_blogindex = '';
 $blog_skipmeta = true;
 include $template['blog'];
 
