@@ -7,12 +7,12 @@
 
         $tags = array();
         $target = array();
-        for $words as $word {
+        foreach ($words as $word) {
             $tag = null;
-            if preg_match('/<(\\w*).*>/', $tag) > 0 {
+            if (preg_match('/<(\\w*).*>/', $tag) > 0) {
                 $tag = $tag[1];
 
-                if $tag.starts_with('/') {
+                if (preg_match('/\/.', $tag) > 0) {
                     $tag = substr($tag, 1);
                     $index = count($tags) - 
                         array_search($tag, array_reverse($tags)) - 1;
@@ -26,12 +26,12 @@
 
             $target[] = $word;
 
-            if $len == 0 {
+            if ($len == 0) {
                 break;
             }
         }
 
-        for array_reverse($tags) as $tag {
+        foreach (array_reverse($tags) as $tag) {
             $target[] = "</$tag>";
         }
 
