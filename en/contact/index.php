@@ -1,15 +1,15 @@
 <?php
-    $lang = 'en';
+$lang = 'en';
 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
 
-    $page['subtitle'] = 'Contact';
-    $page['name'] = 'contact';
+$page['subtitle'] = 'Contact';
+$page['name'] = 'contact';
 
-    include $template['header'];
+include $template['header'];
 ?>
 
-    <article>
+<article>
     <header>
     <h1>Contact</h1>
     <aside>
@@ -34,9 +34,9 @@
     </div>
 
     Feel free to reach me out anytime, but I might not reply instantly.
-    </article>
+</article>
 
-    <article>
+<article>
     <header>
     <h1>Other links</h1>
     <aside>
@@ -65,8 +65,8 @@
 
     Feel free to follow me or add me to your friends; if you don't look like a
     bot or a malicious person to me, I'll likely reply.
-    </article>
+</article>
 
 <?php
-    include $template['footer'];
+include $template['footer'];
 ?>

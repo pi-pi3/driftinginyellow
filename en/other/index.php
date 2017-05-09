@@ -1,15 +1,15 @@
 <?php
-    $lang = 'en';
+$lang = 'en';
 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
 
-    $page['subtitle'] = 'Other';
-    $page['name'] = 'other';
+$page['subtitle'] = 'Other';
+$page['name'] = 'other';
 
-    include $template['header'];
+include $template['header'];
 ?>
 
-    <article>
+<article>
     <header>
     <h1>orb3d</h1>
     <aside>
@@ -22,9 +22,9 @@
     <a href="https://github.com/pi-pi3/orb3d">orb3d</a>
     <a href="https://github.com/redox-os/orbclient">orbclient</a>
     <a href="https://github.com/redox-os/orbtk">orbtk</a>
-    </article>
+</article>
 
-    <article>
+<article>
     <header>
     <h1>wls</h1>
     <aside>
@@ -36,9 +36,9 @@
         -
     <h3>Downloads</h3>
     <a href="https://github.com/pi-pi3/wls">wls</a>
-    </article>
+</article>
 
-    <article>
+<article>
     <header>
     <h1>lib4-lua</h1>
     <aside>
@@ -50,9 +50,9 @@
         -
     <h3>Downloads</h3>
     <a href="https://github.com/pi-pi3/lib4-lua">lib4-lua</a>
-    </article>
+</article>
 
-    <article>
+<article>
     <header>
     <h1>tinVM2</h1>
     <aside>
@@ -63,9 +63,9 @@
         -
     <h3>Downloads</h3>
     <a href="https://gitlab.com/pi_pi3/tinVM2">tinVM2</a>
-    </article>
+</article>
 
-    <article>
+<article>
     <header>
     <h1>pi-tools</h1>
     <aside>
@@ -76,9 +76,9 @@
         -
     <h3>Downloads</h3>
     <a href="https://gitlab.com/pi_pi3/pi-tools">pi-tools</a>
-    </article>
+</article>
 
-    <article>
+<article>
     <header>
     <h1>phong demo</h1>
     <aside>
@@ -88,8 +88,8 @@
     </header>
     <h3>Downloads</h3>
     <a href="https://gitlab.com/pi_pi3/phong-demo">phong-demo</a>
-    </article>
+</article>
 
 <?php
-    include $template['footer'];
+include $template['footer'];
 ?>
