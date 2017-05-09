@@ -12,6 +12,7 @@ if ($lang == 'en') {
     $page['nlang'] = 'de';
 
     $locale['home'] = 'home';
+    $locale['ylw'] = 'ylw';
     $locale['games'] = 'Games';
     $locale['other'] = 'Other';
     $locale['cv'] = 'Curriculum Vitae';
@@ -21,6 +22,7 @@ if ($lang == 'en') {
     $page['nlang'] = 'en';
 
     $locale['home'] = 'home';
+    $locale['ylw'] = 'ylw';
     $locale['games'] = 'Spiele';
     $locale['other'] = 'Anderes';
     $locale['cv'] = 'Curriculum Vitae';

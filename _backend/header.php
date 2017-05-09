@@ -23,6 +23,9 @@
             <a class="thisSite" href="/<?php echo $page['lang'] ?>/">
                 <?php echo $locale['home'] ?>
             </a>
+            <a href="/<?php echo $page['lang'] ?>/ylw">
+                <?php echo $locale['ylw'] ?>
+            </a>
             <a href="/<?php echo $page['lang'] ?>/games">
                 <?php echo $locale['games'] ?>
             </a>
