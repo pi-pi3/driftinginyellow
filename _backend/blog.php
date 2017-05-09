@@ -6,7 +6,8 @@
             $line = explode(' ', $line, 2);
             $timestamp = trim($line[0]);
             $date = new DateTime('@' . $timestamp);
-            $date = $date->format('H:i:s' . "\n" . 'l jS \of F, Y');
+            $time = $date->format('H:i:s');
+            $date = $date->format('l jS \of F, Y');
 
             $filename = $line[1];
             $filename = trim($filename);
@@ -24,15 +25,15 @@
             $m = 'minutes';
             if ($minutes < 1) {
                 $m = 'minute';
-		$minutes = '&lt;1';
-	    } else {
-		$minutes = intval(ceil($minutes));
-	    }
+                $minutes = '&lt;1';
+            } else {
+                $minutes = intval(ceil($minutes));
+            }
 
             // TODO: truncate contents to `n` words on main page
             echo "<article>";
             echo $header;
-            echo "<p style=\"font-size: 75%\">$date<br>";
+            echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
             echo "A $minutes $m read</p>";
             echo '</header>';
             echo $contents;
