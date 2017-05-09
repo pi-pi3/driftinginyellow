@@ -6,9 +6,16 @@ else
     lang=$2
 fi
 
-if [ -e $lang/blog/articles ]
+if [ -z $3 ]
 then
-    echo `date +%s` $1 | tee -a $lang/blog/articles
+    outfile=$lang/blog/articles 
+else
+    outfile=$3
+fi
+
+if [ -e $outfile ]
+then
+    echo `date +%s` $1 | tee -a $outfile
 else
     echo `date +%s` $1
 fi
