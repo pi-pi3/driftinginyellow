@@ -1,5 +1,5 @@
 <?php
-    function trunc($str, $len) {
+    function trunc($str, $len=100) {
         $words = null;
         preg_match_all('/(["\']*<[^>]*>["\']*|[^\s]+)/',
                        $str, $words);
