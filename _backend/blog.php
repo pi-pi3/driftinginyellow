@@ -95,7 +95,7 @@
 
             if ($blog_articles != null) {
                 render_article("$blog_path/" . $filename, $timestamp, $blog_full);
-            } elseif $blog_articles[$filename] {
+            } elseif ($blog_articles[$filename]) {
                 render_article("$blog_path/" . $filename, $timestamp, $blog_full);
             }
         }
