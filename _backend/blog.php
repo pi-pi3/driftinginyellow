@@ -20,11 +20,12 @@
                 } else {
                     $tags[] = $tag;
                 }
+            } else {
+                $len -= 1;
             }
 
             $target[] = $word;
 
-            $len -= 1;
             if $len == 0 {
                 break;
             }
