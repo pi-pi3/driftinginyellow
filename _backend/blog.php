@@ -19,7 +19,8 @@
             $header = $contents[0];
             $contents = $contents[1];
 
-            $words = str_word_count($contents);
+            $verbatim = preg_replace("<[^>]*>", "", $contents);
+            $words = str_word_count($verbatim);
             $minutes = $words / 250;
 
             $m = 'minutes';
