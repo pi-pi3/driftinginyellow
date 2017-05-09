@@ -10,6 +10,10 @@ body {
     background-color: #efefef;
 }
 
+div {
+    display: block;
+}
+
 h1 {
     font-size: 1.6em;
 }
