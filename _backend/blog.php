@@ -93,9 +93,7 @@
             $timestamp = trim($line[0]);
             $filename = trim($line[1]);
 
-            if ($blog_articles != null) {
-                render_article("$blog_path/" . $filename, $timestamp, $blog_full);
-            } elseif ($blog_articles[$filename]) {
+            if ($blog_articles == null || $blog_articles[$filename]) {
                 render_article("$blog_path/" . $filename, $timestamp, $blog_full);
             }
         }
