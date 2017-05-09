@@ -38,7 +38,7 @@
         return join(' ', $target);
     }
 
-    function render_article($filename, $timestamp, $full) {
+    function render_article($filename, $timestamp, $full, $path) {
         $date = new DateTime('@' . $timestamp);
         $time = $date->format('H:i:s');
         $date = $date->format('l jS \of F, Y');
@@ -74,9 +74,8 @@
         } else {
             echo trunc($contents);
             $id = null;
-            preg_match('/^(.*)\.[^\.]$/', $filename, $id);
+            preg_match("/^$path\/(.*)\.[^\.]+$/", $filename, $id);
             $id = $id[1];
-            $path = $_GLOBALS['blog_path'];
             echo '<p style=\"font-size: 80%\">';
             echo "<a href=\"$path/?id=$id\">Read more...</a>";
             echo '</p>';
@@ -95,7 +94,7 @@
 
             if (!isset($blog_articles) || $blog_articles[$filename]) {
                 render_article("$blog_path/" . $filename, $timestamp,
-                               $blog_full);
+                               $blog_full, $blog_path);
             }
         }
         if (!feof($handle)) {
