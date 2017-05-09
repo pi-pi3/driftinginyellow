@@ -10,7 +10,7 @@
 ?>
 
 <article>
-    <h1>Personal details</h1>
+    <?php h1('Personal details') ?>
 
     <div style="float:left;width:30%;">
         <ul>
@@ -38,7 +38,7 @@
         </ul>
     </div>
 
-    <h1>Education</h1>
+    <?php h1('Education') ?>
 
     <div style="float:left;width:50%;">
         <ul>
@@ -60,7 +60,7 @@
         </ul>
     </div>
 
-    <h1>Experiences</h1>
+    <?php h1('Experiences') ?>
 
     <ul>
         <li>8 time Ludum Dare participant</li>
@@ -71,9 +71,9 @@
         </ul>
     </ul>
 
-    <h1>Skills</h1>
+    <?php h1('Skills') ?>
 
-    <h3>General</h3>
+    <?php h2('General') ?>
 
     <ul>
         <li>Problem solving</li>
@@ -82,7 +82,7 @@
         <li>Collaboration over all</li>
     </ul>
 
-    <h3>Languages</h3>
+    <?php h2('Languages') ?>
 
     <div style="float:left;width:30%;">
         <ul>
@@ -100,7 +100,7 @@
         </ul>
     </div>
 
-    <h3>Computer related</h3>
+    <?php h2('Computer related') ?>
 
     <div style="float:left;width:30%;">
         <ul>
@@ -122,7 +122,7 @@
         </ul>
     </div>
 
-    <h4>Programming</h4>
+    <h3>Programming</h3>
 
     <div style="float:left;width:30%;">
         <ul>
@@ -150,7 +150,7 @@
         </ul>
     </div>
 
-    <h1>Interests</h1>
+    <?php h1('Interests') ?>
     <ul>
         <li>Computer sciences</li>
         <ul>

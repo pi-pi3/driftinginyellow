@@ -27,15 +27,21 @@ h1,h2,h3 {
 }
 
 a {
-    color: #003072;
     text-decoration: none;
     margin-left: 0.5ex;
     margin-right: 0.5ex;
 }
 
+a[href] {
+    color: #003072;
+}
+
 a:hover {
-    color: #00286c;
     background-color: #bbbbbb;
+}
+
+a[href]:hover {
+    color: #00286c;
 }
 
 article {
@@ -82,7 +88,7 @@ aside {
 
 #title-yellow {
     font-size: 110%;
-    color: #f9e547;
+    color: #eec300;
 }
 
 #menu {

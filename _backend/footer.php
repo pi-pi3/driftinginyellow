@@ -1,5 +1,10 @@
     </div>
 
+<?php
+    $toc_nav = true;
+    require_once $template['toc'];
+?>
+
     <div id="footer">
         <p style="margin-bottom: 1px;">
             Powered by a 5" hamster in a large running wheel hooked up to

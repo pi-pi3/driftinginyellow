@@ -11,7 +11,7 @@ include $template['header'];
 
 <article>
     <header>
-    <h1>Whoami?</h1>
+    <?php h1('Whoami?') ?>
     <aside>
         Do I know you?
     </aside>
@@ -37,7 +37,7 @@ include $template['header'];
 
 <article>
     <header>
-    <h1>Motivation</h1>
+    <?php h1('Motivation') ?>
     <aside>
         Why the heck would I bother?
     </aside>
@@ -57,8 +57,7 @@ include $template['header'];
 
 <article>
     <header>
-    <a name="specifications">
-    <h1>Specifications</h1></a>
+    <?php h1('Specifications') ?>
     <aside>
         Ok, what does this server have?
     </aside>
@@ -96,12 +95,12 @@ include $template['header'];
 
 <article>
     <header>
-    <h1>More facts about me</h1>
+    <?php h1('More facts about me') ?>
     <aside>
         I have a life, too.
     </aside>
     </header>
-    <h3>Bio</h3>
+    <?php h2('Bio') ?>
     <p>
         I was born in Wrocław, Poland. I lived in Poland for ten years of my
         life, after that I moved to Berlin with my mom. I've been attending a

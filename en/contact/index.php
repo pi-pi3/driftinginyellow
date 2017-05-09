@@ -11,7 +11,7 @@ include $template['header'];
 
 <article>
     <header>
-    <h1>Contact</h1>
+    <?php h1('Contact') ?>
     <aside>
         This is how you contact me!
     </aside>
@@ -38,7 +38,7 @@ include $template['header'];
 
 <article>
     <header>
-    <h1>Other links</h1>
+    <?php h1('Other links') ?>
     <aside>
         Here are also some other links to my accounts
     </aside>

@@ -52,7 +52,4 @@
         </span>
     </div>
 
-    <div id="nav">
-    </div>
-
     <div id="content">
