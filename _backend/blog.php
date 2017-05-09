@@ -77,7 +77,7 @@
             preg_match('/^(.*)\.[^\.]$/', $filename, $id);
             $id = $id[1];
             $path = $_GLOBALS['blog_path'];
-            echo '<p style=\"font-size: 90%\">';
+            echo '<p style=\"font-size: 80%\">';
             echo "<a href=\"$path/?id=$id\">Read more...</a>";
             echo '</p>';
         }
