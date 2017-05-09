@@ -30,6 +30,10 @@
             }
         }
 
+        for array_reverse($tags) as $tag {
+            $target[] = "</$tag>";
+        }
+
         return join(' ', $target);
     }
 
