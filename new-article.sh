@@ -6,4 +6,4 @@ else
     lang=$2
 fi
 
-echo `date +%s` $1 >> $lang/blog/articles
+echo `date +%s` $1 | tee -a $lang/blog/articles
