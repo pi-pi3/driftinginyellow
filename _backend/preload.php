@@ -42,7 +42,10 @@ $nav = array();
 function header_name($name, $level) {
     $short = preg_replace('/[^a-z\-]+/', '-', strtolower($name));
 
-    $nav[] = array('level' => $level, 'name' => $name, 'short' => $short);
+    if ($level < 3) {
+        global $nav;
+        $nav[] = array('level' => $level, 'name' => $name, 'short' => $short);
+    }
 
     echo "<a name=\"$short\" href=\"#$short\">
               <h$level>$name</h$level>
