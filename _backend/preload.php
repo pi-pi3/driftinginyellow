@@ -47,6 +47,7 @@ function header_name($name, $level) {
         $nav[] = array('level' => $level, 'name' => $name, 'short' => $short);
     }
 
+    
     echo "<a name=\"$short\" href=\"#$short\">
               <h$level>$name</h$level>
          </a>";

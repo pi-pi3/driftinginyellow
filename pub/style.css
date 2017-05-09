@@ -28,8 +28,7 @@ h1,h2,h3 {
 
 a {
     text-decoration: none;
-    margin-left: 0.5ex;
-    margin-right: 0.5ex;
+    /*padding: 0.5ex;*/
 }
 
 a[href] {
@@ -71,6 +70,7 @@ aside {
     font-size: 2ex;
     font-weight: bold;
     margin-left: 1em;
+    display: block;
 }
 
 #headerSubtitle {
@@ -102,11 +102,13 @@ aside {
     margin-bottom: 1ex;
 }
 
+#menu a {
+    padding: 0.5ex;
+}
+
 #menu a.thisSite {
     font-size: 2ex;
     font-weight: bold;
-    margin-left: 0.5ex;
-    margin-right: 0.5ex;
 }
 
 #nav {
