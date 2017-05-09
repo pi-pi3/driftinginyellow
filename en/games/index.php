@@ -8,9 +8,13 @@ $page['name'] = 'games';
 
 include $template['header'];
 
-$blog_full = false;
-$blog_path = 'game';
-$blog_articles = null;
+if (isset($_GET['id'])) {
+    $id = $_GET['id'];
+    $blog_full = true;
+    $blog_articles = array($id => true);
+}
+
+$blog_path = 'games';
 $blog_skipmeta = true;
 include $template['blog'];
 
