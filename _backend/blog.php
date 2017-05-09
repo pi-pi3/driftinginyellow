@@ -66,7 +66,8 @@ function render_article($filename, $timestamp, $full, $path) {
     echo '<article>';
     echo $header;
 
-    if (!$_GLOBALS['blog_skipmeta']) {
+    global $blog_skipmeta;
+    if (!$blog_skipmeta) {
         echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
         echo "A $minutes $m read</p>";
         echo '</header>';
