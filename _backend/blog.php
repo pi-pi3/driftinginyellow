@@ -38,49 +38,66 @@
         return join(' ', $target);
     }
 
-    $articles = "articles";
+    function render_aricle($filename, $timestamp, $full) {
+        $date = new DateTime('@' . $timestamp);
+        $time = $date->format('H:i:s');
+        $date = $date->format('l jS \of F, Y');
+
+        $handle1 = fopen($filename, "r");
+        $contents = fread($handle1, filesize($filename));
+        fclose($handle1);
+
+        $contents = explode('</header>', $contents, 2);
+        $header = $contents[0];
+        $contents = $contents[1];
+
+        $verbatim = preg_replace("<[^>]*>", "", $contents);
+        $words = str_word_count($verbatim);
+        $minutes = $words / 250;
+
+        $m = 'minutes';
+        if ($minutes < 1) {
+            $m = 'minute';
+            $minutes = '&lt;1';
+        } else {
+            $minutes = intval(ceil($minutes));
+        }
+
+        echo '<article>';
+        echo $header;
+        echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
+        echo "A $minutes $m read</p>";
+        echo '</header>';
+
+        if ($full) {
+            echo $contents;
+        } else {
+            echo trunc($contents);
+            $id = null;
+            preg_match('/^(.*)\.[^\.]$/', $filename, $id);
+            $id = $id[1];
+            $path = $_GLOBALS['blog_path'];
+            echo '<p style=\"font-size: 90%\">';
+            echo "<a href=\"$path/?id=$id\">Read more...</a>";
+            echo '</p>';
+        }
+        echo '</article>';
+    }
+
+    $articles = "$blog_path/articles";
     $handle = fopen($articles, "r");
+
     if ($handle) {
         while (($line = fgets($handle, 4096)) !== false) {
             $line = explode(' ', $line, 2);
             $timestamp = trim($line[0]);
-            $date = new DateTime('@' . $timestamp);
-            $time = $date->format('H:i:s');
-            $date = $date->format('l jS \of F, Y');
+            $filename = trim($line[1]);
 
-            $filename = $line[1];
-            $filename = trim($filename);
-            $handle1 = fopen($filename, "r");
-            $contents = fread($handle1, filesize($filename));
-            fclose($handle1);
-
-            $contents = explode('</header>', $contents, 2);
-            $header = $contents[0];
-            $contents = $contents[1];
-
-            $verbatim = preg_replace("<[^>]*>", "", $contents);
-            $words = str_word_count($verbatim);
-            $minutes = $words / 250;
-
-            $m = 'minutes';
-            if ($minutes < 1) {
-                $m = 'minute';
-                $minutes = '&lt;1';
-            } else {
-                $minutes = intval(ceil($minutes));
+            if ($blog_articles != null) {
+                render_article("$blog_path/" . $filename, $timestamp, $blog_full);
+            } elseif $blog_articles[$filename] {
+                render_article("$blog_path/" . $filename, $timestamp, $blog_full);
             }
-
-            echo '<article>';
-            echo $header;
-            echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
-            echo "A $minutes $m read</p>";
-            echo '</header>';
-            if ($blog_full) {
-                echo $contents;
-            } else{
-                echo trunc($contents);
-            }
-            echo '</article>';
         }
         if (!feof($handle)) {
             echo "Error: unexpected fgets() fail\n";

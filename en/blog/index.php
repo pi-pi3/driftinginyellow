@@ -3,14 +3,15 @@
 
     require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
 
-    $page['subtitle'] = 'Bringing yellow stars and games together since 1998...';
+    $page['subtitle'] = 'Blog';
     $page['name'] = '';
 
     include $template['header'];
 
-    $blog_full = false;
-    $blog_path = 'blog';
-    $blog_articles = null;
+    $article_id = $_GET['id'] . '.html';
+    $blog_full = true;
+    $blog_path = '.';
+    $blog_articles = array($article_id => true);
     include $template['blog'];
 
     include $template['footer'];
