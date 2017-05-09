@@ -38,7 +38,7 @@
         return join(' ', $target);
     }
 
-    function render_aricle($filename, $timestamp, $full) {
+    function render_article($filename, $timestamp, $full) {
         $date = new DateTime('@' . $timestamp);
         $time = $date->format('H:i:s');
         $date = $date->format('l jS \of F, Y');
