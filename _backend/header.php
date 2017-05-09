@@ -12,7 +12,9 @@
         <!--<a href="/<?php echo $page['lang'] ?>/">
             <img width=64em src="/logo.svg"/>
         </a>-->
-        <a href="/<?php echo $page['lang'] ?>/">driftinginyellow</a> 
+        <a href="/<?php echo $page['lang'] ?>/">
+            driftingin<div id="title-yellow">yellow</div>
+        </a> 
         <span id="headerSubtitle">
             <?php echo $page['subtitle'] ?>
         </span>
@@ -48,6 +50,9 @@
                 <?php echo $page['nlang'] ?>
             </a>
         </span>
+    </div>
+
+    <div id="nav">
     </div>
 
     <div id="content">

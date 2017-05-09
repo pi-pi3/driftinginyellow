@@ -1,7 +1,7 @@
 
 body {
     margin: 1em auto;
-    max-width: 40em;
+    max-width: 54em;
     padding: 0 .62em;
     line-height: 1.6;
     font-size: 1.5ex;
@@ -76,6 +76,11 @@ aside {
     margin-right: 0;
 }
 
+#title-yellow {
+    font-size: 110%;
+    color: #f9e547;
+}
+
 #menu {
     clear: both;
     overflow: hidden;
@@ -92,6 +97,20 @@ aside {
     font-weight: bold;
     margin-left: 0.5ex;
     margin-right: 0.5ex;
+}
+
+#nav {
+    float: right;
+    width: 25%;
+}
+
+#nav ul {
+    list-style-type: square;
+}
+
+#content {
+    float: left;
+    width: 75%;
 }
 
 #footer {
