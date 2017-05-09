@@ -1,4 +1,38 @@
 <?php
+    function trunc($str, $len) {
+        $words = null;
+        preg_match_all('/(["\']*<[^>]*>["\']*|[\'"]*[a-zA-Z_\\-]+["\']*)/',
+                       $str, $words);
+        $words = $words[1];
+
+        $tags = array();
+        $target = array();
+        for $words as $word {
+            $tag = null;
+            if preg_match('/<(\\w*).*>/', $tag) > 0 {
+                $tag = $tag[1];
+
+                if $tag.starts_with('/') {
+                    $tag = substr($tag, 1);
+                    $index = count($tags) - 
+                        array_search($tag, array_reverse($tags)) - 1;
+                    array_splice($tags, $index, $index);
+                } else {
+                    $tags[] = $tag;
+                }
+            }
+
+            $target[] = $word;
+
+            $len -= 1;
+            if $len == 0 {
+                break;
+            }
+        }
+
+        return join(' ', $target);
+    }
+
     $articles = "articles";
     $handle = fopen($articles, "r");
     if ($handle) {
@@ -31,14 +65,13 @@
                 $minutes = intval(ceil($minutes));
             }
 
-            // TODO: truncate contents to `n` words on main page
-            echo "<article>";
+            echo '<article>';
             echo $header;
             echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
             echo "A $minutes $m read</p>";
             echo '</header>';
-            echo $contents;
-            echo "</article>";
+            echo trunc($contents, 100);
+            echo '</article>';
         }
         if (!feof($handle)) {
             echo "Error: unexpected fgets() fail\n";
