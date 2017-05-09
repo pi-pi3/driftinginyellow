@@ -94,6 +94,11 @@ aside {
     margin-right: 0.5ex;
 }
 
+#footer {
+    color: #777;
+    font-size: 80%;
+}
+
 .left {
     float: left;
     margin: 0;
