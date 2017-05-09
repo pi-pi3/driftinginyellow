@@ -72,11 +72,11 @@
         if ($full) {
             echo $contents;
         } else {
-            echo trunc($contents), '(...)';
+            echo trunc($contents), ' (...)';
             $id = null;
             preg_match("/^$path\/(.*)\.[^\.]+$/", $filename, $id);
             $id = $id[1];
-            echo '<p style=\"font-size: 80%\">';
+            echo '<p style="font-size: 80%;">';
             echo "<a href=\"$path/?id=$id\">Read more...</a>";
             echo '</p>';
         }
