@@ -1,7 +1,7 @@
 <?php
     function trunc($str, $len) {
         $words = null;
-        preg_match_all('/(["\']*<[^>]*>["\']*|[\'"]*[a-zA-Z_\\-]+["\']*)/',
+        preg_match_all('/(["\']*<[^>]*>["\']*|[^\s]+)/',
                        $str, $words);
         $words = $words[1];
 
@@ -75,7 +75,11 @@
             echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
             echo "A $minutes $m read</p>";
             echo '</header>';
-            echo trunc($contents, 100);
+            if ($blog_full) {
+                echo $contents;
+            } else{
+                echo trunc($contents);
+            }
             echo '</article>';
         }
         if (!feof($handle)) {
