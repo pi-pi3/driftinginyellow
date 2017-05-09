@@ -13,7 +13,7 @@
             <img width=64em src="/logo.svg"/>
         </a>-->
         <a href="/<?php echo $page['lang'] ?>/">
-            driftingin<div id="title-yellow">yellow</div>
+            driftingin<span id="title-yellow">yellow</span>
         </a> 
         <span id="headerSubtitle">
             <?php echo $page['subtitle'] ?>
