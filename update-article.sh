@@ -1,4 +1,12 @@
 #!/usr/bin/env sh
+if [ $1 == '-h' ]
+then
+    echo "Usage: $1 <lang> <table> <id> [tags]"
+    echo "Examples:"
+    echo "  $1 en blog hello-world"
+    echo "  $1 en game a-game hack-n-slash,"
+fi
+
 lang=$1
 table=$2
 id=$3
