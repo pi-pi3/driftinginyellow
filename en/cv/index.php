@@ -12,53 +12,33 @@
 <article>
     <?php h1('Personal details') ?>
 
-    <div style="float:left;width:30%;">
-        <ul>
-            <li>Full name</li>
-            <li>Birth date</li>
-            <li>Birth place</li>
-            <li>Nationality</li>
-            <li>e-Mail</li>
-            <li>Sex</li>
-            <li>Website</li>
-        </ul>
-    </div>
-
-    <div style="float:right;width:70%;">
-        <ul>
-            <li>Szymon Walter</li>
-            <li>18th April 1998</li>
-            <li>Wrocław</li>
-            <li>Polish</li>
-            <li><a href="mailto:walter.szymon.98@gmail.com">
-                walter.szymon.98@gmail.com</a></li>
-            <li>Male</li>
-            <li><a href="https://driftinginyellow.ddns.info">
-                driftinginyellow.ddns.info</a></li>
-        </ul>
-    </div>
+    <ul>
+    <?php 
+        $w = 0.3;
+        columns('<li>Full name',  'Szymon Walter</li>', $w);
+        columns('<li>Birth date'  '18th April 1998</li>', $w);
+        columns('<li>Birth place' 'Wrocław</li>', $w);
+        columns('<li>Nationality' 'Polish</li>', $w);
+        columns('<li>e-Mail'      '<a href="mailto:walter.szymon.98@gmail.com">
+                                    walter.szymon.98@gmail.com</a></li>', $w);
+        columns('<li>Sex'         'Male</li>', $w);
+        columns('<li>Website'     '<a href="https://driftinginyellow.ddns.info">
+                                    driftinginyellow.ddns.info</a></li>', $w);
+    ?>
+    </ul>
 
     <?php h1('Education') ?>
 
-    <div style="float:left;width:50%;">
-        <ul>
-            <li>Szkoła podstawowa w Czerniawie</li>
-            <li>Szkoła podstawowa w Smolniku</li>
-            <li>Scharmützelsee-Grundschule</li>
-            <li>Katharina Heinroth Grundschule</li>
-            <li>Robert-Jungk-Oberschule</li>
-        </ul>
-    </div>
-
-    <div style="float:right;width:50%;">
-        <ul>
-            <li>2005 - 2006</li>
-            <li>2006 - 2008</li>
-            <li>2008 - 2009</li>
-            <li>2009 - 2011</li>
-            <li>2011 - 2017</li>
-        </ul>
-    </div>
+    <ul>
+    <?php 
+        $w = 0.5;
+        columns('<li>Szkoła podstawowa w Czerniawie', '2005 - 2006</li>', $w);
+        columns('<li>Szkoła podstawowa w Smolniku',   '2006 - 2008</li>', $w);
+        columns('<li>Scharmützelsee-Grundschule',     '2008 - 2009</li>', $w);
+        columns('<li>Katharina Heinroth Grundschule', '2009 - 2011</li>', $w);
+        columns('<li>Robert-Jungk-Oberschule',        '2011 - 2017</li>', $w);
+    ?>
+    </ul>
 
     <?php h1('Experiences') ?>
 
@@ -84,71 +64,43 @@
 
     <?php h2('Languages') ?>
 
-    <div style="float:left;width:30%;">
-        <ul>
-            <li>Polish</li>
-            <li>German</li>
-            <li>English</li>
-        </ul>
-    </div>
-
-    <div style="float:right;width:70%;">
-        <ul>
-            <li>Native</li>
-            <li>Fluent</li>
-            <li>Fluent</li>
-        </ul>
-    </div>
+    <ul>
+    <?php 
+        $w = 0.3;
+        columns('<li>Polish', 'Native</li>', $w);
+        columns('<li>German', 'Fluent</li>', $w);
+        columns('<li>English', 'Fluent</li>', $w);
+    ?>
+    </ul>
 
     <?php h2('Computer related') ?>
 
-    <div style="float:left;width:30%;">
-        <ul>
-            <li>LibreOffice</li>
-            <li>Git</li>
-            <li>Blender</li>
-            <li>GIMP</li>
-            <li>Inkscape</li>
-        </ul>
-    </div>
-
-    <div style="float:right;width:70%;">
-        <ul>
-            <li>Proficient</li>
-            <li>Proficient</li>
-            <li>Beginner</li>
-            <li>Proficient</li>
-            <li>Beginner</li>
-        </ul>
-    </div>
+    <ul>
+    <?php 
+        $w = 0.3;
+        columns('<li>LibreOffice', 'Proficient</li>', $w);
+        columns('<li>Git',         'Proficient</li>', $w);
+        columns('<li>Blender',     'Beginner</li>', $w);
+        columns('<li>GIMP',        'Proficient</li>', $w);
+        columns('<li>Inkscape',    'Beginner</li>', $w);
+    ?>
+    </ul>
 
     <h3>Programming</h3>
 
-    <div style="float:left;width:30%;">
-        <ul>
-            <li>C/C++</li>
-            <li>Rust</li>
-            <li>Haskell</li>
-            <li>Python</li>
-            <li>Lua</li>
-            <li>Bash</li>
-            <li>HTML/CSS/PHP</li>
-            <li>SQL</li>
-        </ul>
-    </div>
-
-    <div style="float:right;width:70%;">
-        <ul>
-            <li>Intermediate</li>
-            <li>Intermediate</li>
-            <li>Beginner</li>
-            <li>Intermediate</li>
-            <li>Advanced</li>
-            <li>Beginner</li>
-            <li>Proficient</li>
-            <li>Beginner</li>
-        </ul>
-    </div>
+    <ul>
+    <?php 
+        $w = 0.3;
+        columns('<li>C/C++',        'Intermediate</li>', $w);
+        columns('<li>Rust',         'Intermediate</li>', $w);
+        columns('<li>Haskell',      'Beginner</li>',$w);
+        columns('<li>Python',       'Intermediate</li>',  $w);
+        columns('<li>Lua',          'Advanced</li>', $w);
+        columns('<li>Bash',         'Beginner</li>', $w);
+        columns('<li>HTML/CSS/PHP', 'Proficient</li>',   $w);
+        columns('<li>SQL',          'Beginner</li>', $w);
+    ?>
+    </ul>
 
     <?php h1('Interests') ?>
     <ul>
