@@ -1,12 +1,13 @@
 <?php
-    $lang = 'en';
+$lang = 'en';
 
-    require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/visual.php';
 
-    $page['subtitle'] = 'Curriculum Vitae';
-    $page['name'] = 'cv';
+$page['subtitle'] = 'Curriculum Vitae';
+$page['name'] = 'cv';
 
-    include $template['header'];
+include $template['header'];
 ?>
 
 <article>
@@ -121,5 +122,5 @@
 </article>
 
 <?php
-    include $template['footer'];
+include $template['footer'];
 ?>

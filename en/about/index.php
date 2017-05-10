@@ -2,6 +2,7 @@
 $lang = 'en';
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/visual.php';
 
 $page['subtitle'] = 'About';
 $page['name'] = 'about';

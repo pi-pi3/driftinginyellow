@@ -18,4 +18,26 @@ function nav($level, $name) {
     $short = preg_replace('/[^a-z\-]+/', '-', strtolower($name));
     $nav[] = array('level' => $level, 'name' => $name, 'short' => $short);
 }
+
+function header_name($name, $level) {
+    $short = preg_replace('/[^a-z\-]+/', '-', strtolower($name));
+
+    nav($level, $name);
+    
+    echo "<a name=\"$short\" href=\"#$short\">
+              <h$level>$name</h$level>
+         </a>";
+}
+
+function h1($name) {
+    header_name($name, 1);
+}
+
+function h2($name) {
+    header_name($name, 2);
+}
+
+function h3($name) {
+    header_name($name, 3);
+}
 ?>
