@@ -1,10 +1,10 @@
 #!/usr/bin/env sh
 if [ $1 == '-h' ]
 then
-    echo "Usage: $0 <lang> <table> <id> [tags]"
+    echo "Usage: update-article <lang> <table> <id> [tags]"
     echo "Examples:"
-    echo "  $0 en blog hello-world"
-    echo "  $0 en game a-game hack-n-slash,"
+    echo "  update-article en blog hello-world"
+    echo "  update-article en game a-game hack-n-slash,"
 fi
 
 lang=$1
