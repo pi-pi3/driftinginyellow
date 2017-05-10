@@ -4,8 +4,8 @@ if ($toc_nav) {
 }
 
 echo '<h4>Table of contents</h4>';
-echo '<hr>';
 echo '<span style="font-size:80%"><a href="#top">Top</a></span>';
+echo '<hr>';
 
 echo '<ol>';
 $level = 1;
