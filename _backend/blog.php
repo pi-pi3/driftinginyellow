@@ -38,10 +38,12 @@ function trunc($str, $len=50) {
     return join(' ', $target);
 }
 
-function render_article($id, $table) {
+function render_article($id, $table, $full = false) {
+    global $db;
+    global $lang;
     $query = $db['www']->query("select * from $table where id = '$id'");
     $query = $query->fetchArray();
-    if (!$query || !isset($query['id']) {
+    if (!$query || !isset($query['id'])) {
         echo "Error: id $id not found in database";
         return;
     }
@@ -50,16 +52,22 @@ function render_article($id, $table) {
     $time = $date->format('H:i:s');
     $date = $date->format('l jS \of F, Y');
 
-    $filename = $_SERVER['ROOT_DIRECTORY'] . "/$lang/" . $query['path'];
-    $handle1 = fopen($filename, 'r');
-    $contents = fread($handle1, filesize($filename));
-    fclose($handle1);
+    $filename = $_SERVER['DOCUMENT_ROOT'] . "/$lang/" . $query['path'];
+    $handle = fopen($filename, 'r');
+
+    if (!$handle) {
+        echo "Error: file $filename not found in document root";
+        return;
+    }
+
+    $contents = fread($handle, filesize($filename));
+    fclose($handle);
 
     $contents = explode('</header>', $contents, 2);
     $header = $contents[0];
     $contents = $contents[1];
 
-    $verbatim = preg_replace("<[^>]*>", "", $contents);
+    $verbatim = preg_replace("/<[^>]*>/", "", $contents);
     $words = str_word_count($verbatim);
     $minutes = $words / 250;
 
@@ -75,6 +83,10 @@ function render_article($id, $table) {
     echo $header;
 
     if (!$query['hide_meta']) {
+	if ($query['pinned']) {
+            echo "<p style=\"font-size:90%;padding:0 0.5ex;
+                  margin-bottom:-1.5ex;\">Pinned</p>";
+	}
         echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
         echo "A $minutes $m read</p>";
         echo '</header>';
@@ -84,9 +96,6 @@ function render_article($id, $table) {
         echo $contents;
     } else {
         echo trunc($contents), ' (...)';
-        $id = null;
-        preg_match("/^$path\/(.*)\.[^\.]+$/", $filename, $id);
-        $id = $id[1];
         echo '<p style="font-size: 80%;">';
         echo "<a href=\"?id=$id\">Read more...</a>";
         echo '</p>';
@@ -95,12 +104,14 @@ function render_article($id, $table) {
 }
 
 if (isset($_GET['id'])) {
-    render_article($_GET['id'], $blog_table);
+    render_article($_GET['id'], $blog_table, true);
 } else {
-    $query = $db['www']->query("select id from $blog_table order by time desc
-                                order by pinned desc");
-    while ($row = $query->fetchArray()) {
-        render_article($row['id'], $blog_table);
+    $query = $db['www']->query("select id from $blog_table
+                                order by time desc, pinned desc");
+    if ($query) {
+        while ($row = $query->fetchArray()) {
+            render_article($row['id'], $blog_table);
+        }
     }
 }
 ?>

@@ -1,5 +1,6 @@
 <?php
-$db['www'] = new SQLite3($_SERVER['ROOT_DIRECTORY'] . "/.db/$lang/www.db");
+$db = array();
+$db['www'] = new SQLite3($_SERVER['DOCUMENT_ROOT'] . "/.db/$lang/www.db");
 /* 
  *  blog:
  *  id: string | time: int | path: string | pinned: int | hide_meta: int
