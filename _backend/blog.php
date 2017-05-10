@@ -87,6 +87,12 @@ function render_article($filename, $timestamp, $full, $path) {
     echo '</article>';
 }
 
+if (isset($_GET['id'])) {
+    $id = $_GET['id'] . '.html';
+    $blog_full = true;
+    $blog_articles = array($id => true);
+}
+
 $articles = "$blog_path/articles";
 $handle = fopen($articles, "r");
 

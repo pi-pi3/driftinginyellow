@@ -8,14 +8,8 @@ $page['name'] = '';
 
 include $template['header'];
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $blog_full = true;
-    $blog_articles = array($id => true);
-}
-
 $blog_path = 'blog';
-$blog_skipmeta = true;
+$blog_skipmeta = false;
 include $template['blog'];
 
 include $template['footer'];
