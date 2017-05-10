@@ -3,6 +3,10 @@ if ($toc_nav) {
     echo '<div id="nav">';
 }
 
+echo '<h4>Table of contents</h4>';
+echo '<hr>';
+echo '<span style="font-size:80%"><a href="#top">Top</a></span>';
+
 echo '<ol>';
 $level = 1;
 foreach ($nav as $h) {
