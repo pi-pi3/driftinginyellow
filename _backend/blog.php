@@ -38,12 +38,20 @@ function trunc($str, $len=50) {
     return join(' ', $target);
 }
 
-function render_article($filename, $timestamp, $full, $path) {
-    $date = new DateTime('@' . $timestamp);
+function render_article($id, $table) {
+    $query = $db['www']->query("select * from $table where id = '$id'");
+    $query = $query->fetchArray();
+    if (!$query || !isset($query['id']) {
+        echo "Error: id $id not found in database";
+        return;
+    }
+
+    $date = new DateTime('@' . $query['time']);
     $time = $date->format('H:i:s');
     $date = $date->format('l jS \of F, Y');
 
-    $handle1 = fopen($filename, "r");
+    $filename = $_SERVER['ROOT_DIRECTORY'] . "/$lang/" . $query['path'];
+    $handle1 = fopen($filename, 'r');
     $contents = fread($handle1, filesize($filename));
     fclose($handle1);
 
@@ -66,8 +74,7 @@ function render_article($filename, $timestamp, $full, $path) {
     echo '<article>';
     echo $header;
 
-    global $blog_skipmeta;
-    if (!$blog_skipmeta) {
+    if (!$query['hide_meta']) {
         echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
         echo "A $minutes $m read</p>";
         echo '</header>';
@@ -88,28 +95,12 @@ function render_article($filename, $timestamp, $full, $path) {
 }
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'] . '.html';
-    $blog_full = true;
-    $blog_articles = array($id => true);
-}
-
-$articles = "$blog_path/articles";
-$handle = fopen($articles, "r");
-
-if ($handle) {
-    while (($line = fgets($handle, 4096)) !== false) {
-        $line = explode(' ', $line, 2);
-        $timestamp = trim($line[0]);
-        $filename = trim($line[1]);
-
-        if (!isset($blog_articles) || $blog_articles[$filename]) {
-            render_article("$blog_path/" . $filename, $timestamp,
-                           $blog_full, $blog_path);
-        }
+    render_article($_GET['id'], $blog_table);
+} else {
+    $query = $db['www']->query("select id from $blog_table order by time desc
+                                order by pinned desc");
+    while ($row = $query->fetchArray()) {
+        render_article($row['id'], $blog_table);
     }
-    if (!feof($handle)) {
-        echo "Error: unexpected fgets() fail\n";
-    }
-    fclose($handle);
 }
 ?>

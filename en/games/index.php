@@ -8,8 +8,7 @@ $page['name'] = 'games';
 
 include $template['header'];
 
-$blog_path = 'games';
-$blog_skipmeta = true;
+$blog_table = 'games';
 include $template['blog'];
 
 include $template['footer'];
