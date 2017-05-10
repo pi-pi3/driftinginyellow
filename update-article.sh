@@ -5,6 +5,8 @@ then
     echo "Examples:"
     echo "  update-article en blog hello-world"
     echo "  update-article en game a-game hack-n-slash,"
+
+    return
 fi
 
 lang=$1

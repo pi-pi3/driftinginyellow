@@ -5,6 +5,8 @@ then
     echo "Examples:"
     echo "  new-article en blog hello-world blog/hello-world.html"
     echo "  new-article en game a-game games/game.html rpg,fun,2d,"
+
+    return
 fi
 
 lang=$1
