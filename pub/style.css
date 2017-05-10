@@ -7,7 +7,7 @@ body {
     font-size: 1.5ex;
     font: 1.2em/1.62 sans-serif;
     color: #444;
-    background-color: #efefef;
+    background-color: #fff;
 }
 
 div {
@@ -36,7 +36,7 @@ a[href] {
 }
 
 a:hover {
-    background-color: #bbbbbb;
+    background-color: #bbb;
 }
 
 a[href]:hover {
@@ -45,6 +45,9 @@ a[href]:hover {
 
 article {
     border-bottom: 1px solid #dadada;
+    background-color: #ebebeb;
+    padding: 0.5ex 2ex;
+    margin-bottom: 1em;
 }
 
 article ul {
@@ -66,7 +69,7 @@ aside {
 
 #header {
     clear: both;
-    color: #666666;
+    color: #666;
     font-size: 2ex;
     font-weight: bold;
     margin-left: 1em;
@@ -75,7 +78,7 @@ aside {
 
 #headerSubtitle {
     clear: both;
-    color: #777777;
+    color: #777;
     font-size: 1.3ex;
     margin-left: 2em;
     font-style: none;
@@ -87,14 +90,14 @@ aside {
 }
 
 #title-yellow {
-    font-size: 110%;
+    font-size: 120%;
     color: #eec300;
 }
 
 #menu {
     clear: both;
     overflow: hidden;
-    background-color: #dddddd;
+    background-color: #ddd;
     font-size: 1.6ex;
     padding: 0.2ex;
     border-top: 1px solid #cccccc;
@@ -122,7 +125,8 @@ aside {
 
 #content {
     float: left;
-    width: 75%;
+    width: 72.5%;
+    margin: 1.25%;
 }
 
 #footer {
