@@ -15,7 +15,7 @@ function md_tohtml($text) {
 
     $text = md_replace('/ {2,}$/', 'md_linebreak', $text);
 
-    $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)\n={3,}/', 'md_aside', $text);
+    $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)\n={3,}/m', 'md_aside', $text);
     $text = md_replace('/^([\d\D]*)={3,}/', 'md_header', $text);
 
     $text = md_replace('/^[\t ]*((\d\.(?:[\t ]+).*(?:\n(?: {3,}.+))*\n?)+)/m',
