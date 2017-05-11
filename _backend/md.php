@@ -3,6 +3,9 @@ $md = array();
 $md['refs'] = array();
 
 function md_tohtml($text) {
+    // Remove <script>
+    $text = md_replace('/<script>[\d\D]*?<\/script>/', 'md_clear', $text);
+
     $text = md_replace('/^#(.*)/', 'md_h1', $text);
     $text = md_replace('/^##(.*)/', 'md_h2', $text);
     $text = md_replace('/^###(.*)/', 'md_h3', $text);
@@ -30,12 +33,13 @@ function md_tohtml($text) {
     $text = md_replace('/__(.*?)__/', 'md_bold', $text);
     $text = md_replace('/\~\~(.*?)\~\~/', 'md_strike', $text);
 
+    $text = md_replace('/\[(.*?)\]:(.*)/', 'md_ref', $text);
+
     $text = md_replace('/!\[(.*?)\]\((.*?)\)/', 'md_img', $text);
     $text = md_replace('/!\[(.*?)\]\[(.*?)\]/', 'md_imgref', $text);
 
     $text = md_replace('/\[(.*?)\]\((.*?)\)/', 'md_link', $text);
     $text = md_replace('/\[(.*?)\]\[(.*?)\]/', 'md_linkref', $text);
-    $text = md_replace('/\[(.*?)\]:(.*)/', 'md_ref', $text);
     $text = md_replace('/\[(.*?)\]/', 'md_reflink', $text);
 
     $text = md_replace('/`(.*?)`/', 'md_code', $text);
@@ -49,6 +53,10 @@ function md_tohtml($text) {
     $text = md_replace('/^[\-*_]{3,}$/', 'md_rule', $text);
 
     return $text;
+}
+
+function md_clear() {
+    return '';
 }
 
 function md_replace($regex, $func, $text) {
