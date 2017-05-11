@@ -6,12 +6,12 @@ function md_tohtml($text) {
     // Remove <script>
     $text = md_replace('/<script>[\d\D]*?<\/script>/', 'md_clear', $text);
 
-    $text = md_replace('/^#{6,}(.*)/', 'md_h6', $text);
-    $text = md_replace('/^#{5}(.*)/', 'md_h5', $text);
-    $text = md_replace('/^#{4}(.*)/', 'md_h4', $text);
-    $text = md_replace('/^###(.*)/', 'md_h3', $text);
-    $text = md_replace('/^##(.*)/', 'md_h2', $text);
-    $text = md_replace('/^#(.*)/', 'md_h1', $text);
+    $text = md_replace('/^#{6,}(.*)/m', 'md_h6', $text);
+    $text = md_replace('/^#{5}(.*)/m', 'md_h5', $text);
+    $text = md_replace('/^#{4}(.*)/m', 'md_h4', $text);
+    $text = md_replace('/^###(.*)/m', 'md_h3', $text);
+    $text = md_replace('/^##(.*)/m', 'md_h2', $text);
+    $text = md_replace('/^#(.*)/m', 'md_h1', $text);
 
     $text = md_replace('/ {2,}$/', 'md_linebreak', $text);
 
@@ -22,7 +22,7 @@ function md_tohtml($text) {
                        'md_ordered', $text);
     $text = md_replace('/^[\t ]*(([+\-*](?:[\t ]+).*(?:\n(?: {3,}.+))*\n?)+)/m',
                        'md_unordered', $text);
-    $text = md_replace('/^[\t ]*(?:\d\.|[+\-*])(.*(?:\n(?:\t+| {3,}).+)*)/m',
+    $text = md_replace('/^[\t ]*(?:\d\.|[+\-*])([^\s+\-*]+(?:\n(?:\t+| {3,}).+)*)/m',
                        'md_list', $text);
 
     $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)/m', 'md_par', $text);
@@ -45,12 +45,12 @@ function md_tohtml($text) {
     $text = md_replace('/`(.*?)`/', 'md_code', $text);
     $text = md_replace('/```((?:.*\n)*?)```/', 'md_code', $text);
 
-    $text = md_replace('/^>(.*)/', 'md_blockquote', $text);
+    $text = md_replace('/^>(.*)/m', 'md_blockquote', $text);
 
     $text = md_replace('/\|(?:.*\|)*\n-{3,}/', 'md_tableh', $text);
     $text = md_replace('/\|(?:.*\|)*/', 'md_table', $text);
 
-    $text = md_replace('/^[\-*_]{3,}$/', 'md_rule', $text);
+    $text = md_replace('/^[\-*_]{3,}$/m', 'md_rule', $text);
 
     return $text;
 }
