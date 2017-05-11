@@ -12,10 +12,10 @@ echo '<ol style="list-style-type:lower-roman;">';
 $level = 0;
 foreach ($nav as $h) {
     if ($h['level'] > $level) {
-        echo ($level > 1)? '<ul>':'<ol>';
+        echo (($level > 1)? '<ul>':'<ol>');
         $level = $h['level'];
     } elseif ($h['level'] < $level) {
-        echo ($level > 1)? '</ul>':'</ol>';
+        echo (($level > 1)? '</ul>':'</ol>');
         $level = $h['level'];
     }
     echo "<a href=\"${h['href']}\">";
