@@ -96,31 +96,43 @@ function render_article($id, $table, $full = false) {
         echo $contents;
     } else {
         echo trunc($contents), ' (...)';
+    }
+
+    $views = $db['www']->query("select views from $table
+                                where id = '$id'");
+    if ($views) {
+    	$views = $views->fetchArray()['views'];
+        echo "<p style=\"font-size: 75%\">$views views</p>";
+    }
+
+    if (!$full) {
         echo '<p style="font-size: 80%;">';
         echo "<a href=\"?id=$id\">Read more...</a>";
         echo '</p>';
     }
+
     echo '</article>';
 }
 
 if (isset($_GET['id'])) {
-    render_article($_GET['id'], $blog_table, true);
+    $id = $_GET['id'];
+    $views = $db['www']->query("select views from $blog_table
+                                where id = '$id'");
+    if ($views) {
+    	$views = $views->fetchArray()['views'];
+    	if (isset($views)) {
+    	    $views = intval($views)+1;
+    	    $db['www']->exec("update $blog_table set views = $views
+    	                      where id = '$id'");
+    	}
+    }
+    render_article($id, $blog_table, true);
 } else {
     $query = $db['www']->query("select id from $blog_table
                                 order by time desc, pinned desc");
     if ($query) {
         while ($row = $query->fetchArray()) {
-            $id = $row['id'];
-            $views = $db['www']->query("select views from $blog_table
-                                        where id = $id");
-            $views = $views->fetchArray();
-            $views = $views['views'];
-            if (isset($views)) {
-                $views = intval($views)+1;
-                $db['www']->exec("update $blog_table set views = $views
-                                  where id = $id");
-            }
-            render_article($id, $blog_table);
+            render_article($row['id'], $blog_table);
         }
     }
 }
