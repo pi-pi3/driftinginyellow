@@ -1,6 +1,7 @@
 # Hello, world!
 
 And welcome to my place!
+=======================
 
 I'm glad you somehow managed to find my website. Now I'd like to walk you
 through some of the things you will be able to do in here.
@@ -28,3 +29,13 @@ By the way, you might want to consider reading the
 [about](/en/about) section. There's some interesting stuff
 about me and this website in there.
 
+Just testing a list
+1. ordered
+   paragraph
+2. ordered
+  - sub
+3. ordered
+  1. ordered sub
+
+- another list
+  1. With subs

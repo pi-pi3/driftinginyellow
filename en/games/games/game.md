@@ -1,6 +1,7 @@
 # Game template
 
 Short description
+=================
 
 ## Gameplay
 It's a fun game
