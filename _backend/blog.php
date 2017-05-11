@@ -94,8 +94,8 @@ function render_article($id, $table, $full = false) {
 	}
         echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
         echo "A $minutes $m read</p>";
-        echo '</header>';
     }
+    echo '</header>';
 
     if ($full) {
         echo $contents;

@@ -6,17 +6,17 @@ function md_tohtml($text) {
     // Remove <script>
     $text = md_replace('/<script>[\d\D]*?<\/script>/', 'md_clear', $text);
 
-    $text = md_replace('/^#([^#\n]*)/m', 'md_h1', $text);
-    $text = md_replace('/^##([^#\n]*)/m', 'md_h2', $text);
-    $text = md_replace('/^###([^#\n]*)/m', 'md_h3', $text);
-    $text = md_replace('/^#{4}([^#\n]*)/m', 'md_h4', $text);
-    $text = md_replace('/^#{5}([^#\n]*)/m', 'md_h5', $text);
-    $text = md_replace('/^#{6,}([^#\n]*)/m', 'md_h6', $text);
+    $text = md_replace('/^#([^#\n]*)$/m', 'md_h1', $text);
+    $text = md_replace('/^##([^#\n]*)$/m', 'md_h2', $text);
+    $text = md_replace('/^###([^#\n]*)$/m', 'md_h3', $text);
+    $text = md_replace('/^#{4}([^#\n]*)$/m', 'md_h4', $text);
+    $text = md_replace('/^#{5}([^#\n]*)$/m', 'md_h5', $text);
+    $text = md_replace('/^#{6,}([^#\n]*)$/m', 'md_h6', $text);
 
     $text = md_replace('/ {2,}$/', 'md_linebreak', $text);
 
-    $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)\n={3,}/m', 'md_aside', $text);
-    $text = md_replace('/^([\d\D]*)={3,}/', 'md_header', $text);
+    $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)\n={3,}$/m', 'md_aside', $text);
+    $text = md_replace('/^([\d\D]*?<\/aside>)/', 'md_header', $text);
 
     $text = md_replace('/^[\t ]*((\d\.(?:[\t ]+).*(?:\n(?: {3,}.+))*\n?)+)/m',
                        'md_ordered', $text);
@@ -87,9 +87,9 @@ function md_par($text) {
     return "<p>$text</p>";
 }
 
-function md_aside($text, $noheader=false) {
+function md_aside($text) {
     $text = trim($text);
-    return "<aside>$text</aside>" . (($noheader)? '':"\n===");
+    return "<aside>$text</aside>";
 }
 
 function md_header($text) {
