@@ -110,7 +110,17 @@ if (isset($_GET['id'])) {
                                 order by time desc, pinned desc");
     if ($query) {
         while ($row = $query->fetchArray()) {
-            render_article($row['id'], $blog_table);
+            $id = $row['id'];
+            $views = $db['www']->query("select views from $blog_table
+                                        where id = $id");
+            $views = $views->fetchArray();
+            $views = $views['views'];
+            if (isset($views) {
+                $views = intval($views)+1;
+                $db['www']->exec("update $blog_table set views = $views
+                                  where id = $id");
+            }
+            render_article($id, $blog_table);
         }
     }
 }
