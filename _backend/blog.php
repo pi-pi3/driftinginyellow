@@ -66,9 +66,8 @@ function render_article($id, $table, $full = false) {
     $contents = fread($handle, filesize($filename));
     fclose($handle);
 
-    $contents = explode('</header>', $contents, 2);
-
     $contents = md_tohtml($contents);
+    $contents = explode('</header>', $contents, 2);
 
     $header = $contents[0];
     $contents = $contents[1];
