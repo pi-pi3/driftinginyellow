@@ -134,7 +134,9 @@ if (array_key_exists('id', $_GET)) {
                                 order by time desc, pinned desc");
     if ($query) {
         while ($row = $query->fetchArray()) {
-            nav(0, $row['title'], "?id=${row['id']}");
+            if ($row['title']) {
+                nav(0, $row['title'], "?id=${row['id']}");
+            }
             render_article($row['id'], $blog_table);
         }
     }
