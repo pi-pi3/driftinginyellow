@@ -1,5 +1,6 @@
 <?php
 require_once __DIR__ . '/visual.php';
+require_once __DIR__ . '/md.php';
 
 function trunc($str, $len=50) {
     $words = null;
@@ -66,6 +67,9 @@ function render_article($id, $table, $full = false) {
     fclose($handle);
 
     $contents = explode('</header>', $contents, 2);
+
+    $contents = md_tohtml($contents);
+
     $header = $contents[0];
     $contents = $contents[1];
 
