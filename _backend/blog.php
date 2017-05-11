@@ -133,6 +133,8 @@ if (array_key_exists('id', $_GET)) {
     }
     render_article($id, $blog_table, true);
 } else {
+    $nav_print = 0;
+
     $query = $db['www']->query("select id, title from $blog_table
                                 order by time desc, pinned desc");
     if ($query) {

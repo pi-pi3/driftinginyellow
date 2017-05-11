@@ -13,6 +13,11 @@ function columns($left, $right, $w) {
 }
 
 function nav($level, $name, $href=null) {
+    global $nav_print;
+    if ($level <= $nav_print) {
+        return;
+    }
+
     $short = preg_replace('/[^a-z\-]+/', '-', strtolower($name));
 
     if (!isset($href)) {

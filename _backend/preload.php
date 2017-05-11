@@ -37,5 +37,7 @@ $template['header'] = __DIR__ . '/header.php';
 $template['footer'] = __DIR__ . '/footer.php';
 $template['blog'] = __DIR__ . '/blog.php';
 $template['toc'] = __DIR__ . '/toc.php';
+$template['md'] = __DIR__ . '/md.php';
 
 $nav = array();
+$nav_print = 2;

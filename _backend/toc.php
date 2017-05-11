@@ -8,7 +8,7 @@ echo '<span style="font-size:80%"><a href="#top">Top</a></span>';
 echo '<hr>';
 
 
-echo '<ol style="list-style-type:lower-latin;">';
+echo '<ol style="list-style-type:lower-roman;">';
 $level = 0;
 foreach ($nav as $h) {
     if ($h['level'] > $level) {

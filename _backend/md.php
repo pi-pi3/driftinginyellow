@@ -68,7 +68,7 @@ function md_replace($regex, $func, $text) {
 
 function md_title($title, $level) {
     $title = trim($title);
-    if ($level < 3 && function_exists('nav')) {
+    if (function_exists('nav')) {
         nav($level, $title);
     }
     
