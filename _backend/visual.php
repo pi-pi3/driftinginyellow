@@ -12,11 +12,15 @@ function columns($left, $right, $w) {
     echo "</div>";
 }
 
-function nav($level, $name) {
-    global $nav;
-
+function nav($level, $name, $href=null) {
     $short = preg_replace('/[^a-z\-]+/', '-', strtolower($name));
-    $nav[] = array('level' => $level, 'name' => $name, 'short' => $short);
+
+    if (!isset($href)) {
+        $href = "#$short";
+    }
+
+    global $nav;
+    $nav[] = array('level' => $level, 'name' => $name, 'href' => $href);
 }
 
 function header_name($name, $level) {

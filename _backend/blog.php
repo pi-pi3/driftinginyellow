@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/visual.php';
+
 function trunc($str, $len=50) {
     $words = null;
     preg_match_all('/(["\']*<[^>]*>["\']*|[^\s]+)/',
@@ -128,10 +130,11 @@ if (array_key_exists('id', $_GET)) {
     }
     render_article($id, $blog_table, true);
 } else {
-    $query = $db['www']->query("select id from $blog_table
+    $query = $db['www']->query("select id, title from $blog_table
                                 order by time desc, pinned desc");
     if ($query) {
         while ($row = $query->fetchArray()) {
+            nav(0, $row['title'], "?id=${row['id']}");
             render_article($row['id'], $blog_table);
         }
     }
