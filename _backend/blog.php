@@ -115,7 +115,7 @@ if (isset($_GET['id'])) {
                                         where id = $id");
             $views = $views->fetchArray();
             $views = $views['views'];
-            if (isset($views) {
+            if (isset($views)) {
                 $views = intval($views)+1;
                 $db['www']->exec("update $blog_table set views = $views
                                   where id = $id");
