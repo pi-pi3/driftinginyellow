@@ -1,4 +1,4 @@
-# Game template
+# Zeldiette's Quest
 
 An proof-of-concept tactical RPG 
 =================
