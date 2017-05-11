@@ -114,8 +114,8 @@ function render_article($id, $table, $full = false) {
     echo '</article>';
 }
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
+if (array_key_exists('id', $_GET)) {
+    $id = htmlspecialchars($_GET['id']);
     $views = $db['www']->query("select views from $blog_table
                                 where id = '$id'");
     if ($views) {
