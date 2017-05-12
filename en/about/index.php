@@ -123,7 +123,7 @@ include $template['header'];
         later I participated in Ludum Dare for the first time. Since then I've
         been going ever deeper into computers and low-level stuff. Today I'm
         working on gamedev, systems programming, I even invented
-        <a href="/ylw">my own language</a>.
+        <a href="/en/ylw">my own language</a>.
     </p>
 </article>
 
