@@ -23,7 +23,8 @@ function md_tohtml($text) {
                        'md_ordered', $text);
     $text = md_replace('/^[\t ]*(([+\-*](?:[\t ]+).*(?:\n(?: {3,}.+))*\n?)+)/m',
                        'md_unordered', $text);
-    $text = md_replace('/^[\t ]*(?:\d\.|[+\-*])(.+(?:\n(?:\t+| {3,}).+)*)/m', 'md_list', $text);
+    $text = md_replace('/^[\t ]*(?:\d\.|[+\-*])(.+(?:\n(?:\t+| {3,}).+)*)/m',
+                       'md_list', $text);
 
     $text = md_replace('/```((?:(?:.*\n)*?))```/', 'md_codeblock', $text);
 
@@ -34,11 +35,13 @@ function md_tohtml($text) {
     $text = md_replace('/(?<=[^\\\\])__(.*?[^\\\\])__/', 'md_bold', $text);
     $text = md_replace('/(?<=[^\\\\])\*(.*?[^\\\\])\*/', 'md_emph', $text);
     $text = md_replace('/(?<=[^\\\\])_(.*?[^\\\\])_/', 'md_emph', $text);
-    $text = md_replace('/(?<=[^\\\\])\~\~(.*?[^\\\\])\~\~/', 'md_strike', $text);
+    $text = md_replace('/(?<=[^\\\\])\~\~(.*?[^\\\\])\~\~/',
+                       'md_strike', $text);
 
     $text = md_replace('/(?<=[^\\\\])\\\\\*/', 'md_star', $text);
     $text = md_replace('/(?<=[^\\\\])\_/', 'md_underscore', $text);
     $text = md_replace('/(?<=[^\\\\])\~/', 'md_tilde', $text);
+    $text = md_replace('/\\\\\\\\/', 'md_backslash', $text);
 
     $text = md_replace('/\[(.*?)\]:(.*)/', 'md_ref', $text);
 
@@ -221,5 +224,9 @@ function md_underscore() {
 
 function md_tilde() {
     return '~';
+}
+
+function md_backslash() {
+    return '\\';
 }
 ?>
