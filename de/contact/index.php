@@ -34,7 +34,7 @@ include $template['header'];
 
 <article>
     <header>
-    <h1>Andere Links</h1>
+    <?php h1('Andere Links') ?>
     <aside>
         Hier sind noch andere Links zu meinen Konten
     </aside>
