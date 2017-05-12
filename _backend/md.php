@@ -15,15 +15,16 @@ function md_tohtml($text) {
 
     $text = md_replace('/ {2,}$/', 'md_linebreak', $text);
 
-    $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)\n={3,}$/m', 'md_aside', $text);
-    $text = md_replace('/^([\d\D]*?<\/aside>)/', 'md_header', $text);
+    $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)\n={3,}$/m',
+                       'md_aside', $text);
+    $text = md_replace('/^([\d\D]*?(?:<\/aside>|={3,}))/', 'md_header', $text);
 
     $text = md_replace('/^[\t ]*((\d\.(?:[\t ]+).*(?:\n(?: {3,}.+))*\n?)+)/m',
                        'md_ordered', $text);
     $text = md_replace('/^[\t ]*(([+\-*](?:[\t ]+).*(?:\n(?: {3,}.+))*\n?)+)/m',
                        'md_unordered', $text);
-    $text = md_replace('/^[\t ]*(?:\d\.|[+\-*])([^\s+\-*]+(?:\n(?:\t+| {3,}).+)*)/m',
-                       'md_list', $text);
+    $text = md_replace('/^[\t ]*(?:\d\.|[+\-*])([^\s+\-*]+' . 
+                       '(?:\n(?:\t+| {3,}).+)*)/m', 'md_list', $text);
 
     $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)/m', 'md_par', $text);
 
