@@ -20,6 +20,9 @@ if ($lang == 'en') {
     $locale['cv'] = 'Curriculum Vitae';
     $locale['about'] = 'About';
     $locale['contact'] = 'Contact';
+
+    $locale['toc'] = 'Table of contents';
+    $locale['top'] = 'Top';
 } else {
     $page['nlang'] = 'en';
 
@@ -30,6 +33,9 @@ if ($lang == 'en') {
     $locale['cv'] = 'Curriculum Vitae';
     $locale['about'] = 'Über mich';
     $locale['contact'] = 'Kontakt';
+
+    $locale['toc'] = 'Inhaltsverzeichnis';
+    $locale['top'] = 'Anfang';
 }
 
 $template = array();

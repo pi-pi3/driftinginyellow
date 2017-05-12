@@ -3,8 +3,9 @@ if ($toc_nav) {
     echo '<div id="nav">';
 }
 
-echo '<h4>Table of contents</h4>';
-echo '<span style="font-size:80%"><a href="#top">Top</a></span>';
+echo "<h4>${locale['toc']}</h4>";
+echo "<span style=\"font-size:80%\"><a href=\"#top\">" . 
+     "${locale['top']}</a></span>";
 echo '<hr>';
 
 $has_zero = false;
