@@ -28,11 +28,15 @@ function md_tohtml($text) {
 
     $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)/m', 'md_par', $text);
 
-    $text = md_replace('/\*(.*?)\*/', 'md_emph', $text);
-    $text = md_replace('/_(.*?)_/', 'md_emph', $text);
-    $text = md_replace('/\*\*(.*?)\*\*/', 'md_bold', $text);
-    $text = md_replace('/__(.*?)__/', 'md_bold', $text);
-    $text = md_replace('/\~\~(.*?)\~\~/', 'md_strike', $text);
+    $text = md_replace('/(?<=[^\])\*\*(.*?[^\])\*\*/', 'md_bold', $text);
+    $text = md_replace('/(?<=[^\])__(.*?[^\])__/', 'md_bold', $text);
+    $text = md_replace('/(?<=[^\])\*(.*?[^\])\*/', 'md_emph', $text);
+    $text = md_replace('/(?<=[^\])_(.*?[^\])_/', 'md_emph', $text);
+    $text = md_replace('/(?<=[^\])\~\~(.*?[^\])\~\~/', 'md_strike', $text);
+
+    $text = md_replace('/(?<=[^\])\\\*/', 'md_star', $text);
+    $text = md_replace('/(?<=[^\])\_/', 'md_underscore', $text);
+    $text = md_replace('/(?<=[^\])\~/', 'md_tilde', $text);
 
     $text = md_replace('/\[(.*?)\]:(.*)/', 'md_ref', $text);
 
@@ -228,5 +232,17 @@ function md_quote($text) {
 
 function md_rule() {
     return "<hr>";
+}
+
+function md_star() {
+    return '*';
+}
+
+function md_underscore() {
+    return '_';
+}
+
+function md_tilde() {
+    return '~';
 }
 ?>
