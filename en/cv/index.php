@@ -87,7 +87,7 @@ include $template['header'];
     ?>
     </ul>
 
-    <h3>Programming</h3>
+    <?php h3('Programming') ?>
 
     <ul>
     <?php 
