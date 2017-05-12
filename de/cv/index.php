@@ -1,177 +1,126 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
-    <title>Drifting in Yellow</title>
-    <link rel="stylesheet" type="text/css" href="/pub/style.css">
-</head>
-<body>
-    <div id="header">
-        <!--<a href="/de/"><img width=64em src="/logo.svg"/></a>-->
-        <a href="/de/">driftinginyellow</a> 
-        <span id="headerSubtitle">
-            Curriculum Vitae
-        </span>
-    </div>
+<?php
+$lang = 'de';
 
-    <div id="menu">
-        <span class="left">
-            <a class="thisSite" href="/de/">home</a>
-            <a href="/de/games">Spiele</a>
-            <a href="/de/other">Anderes</a>
-            <a href="/de/cv">Curriculum Vitae</a>
-        </span>
-        <span class="right">
-            <a href="/de/about">Über mich</a>
-            <a href="/de/contact">Kontakt</a>
-            <a href="/en/cv/">en</a>
-        </span>
-    </div>
+require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/visual.php';
 
-    <article>
-        <h1>Personendaten</h1>
+$page['subtitle'] = 'Curriculum Vitae';
+$page['name'] = 'cv';
 
-        <div style="float:left;width:30%;">
-            <ul style="list-style-type:none">
-                <li>Voller Name</li>
-                <li>Geburtsdatum</li>
-                <li>Geburtsort</li>
-                <li>Nationalität</li>
-                <li>e-Mail</li>
-                <li>Geschlecht</li>
-                <li>Website</li>
-            </ul>
-        </div>
+include $template['header'];
+?>
 
-        <div style="float:right;width:70%;">
-            <ul style="list-style-type:none">
-                <li>Szymon Walter</li>
-                <li>18th April 1998</li>
-                <li>Wrocław</li>
-                <li>Polish</li>
-                <li><a href="mailto:walter.szymon.98@gmail.com">
-                    walter.szymon.98@gmail.com</a></li>
-                <li>Mänlich</li>
-                <li><a href="https://driftinginyellow.ddns.info">
-                    driftinginyellow.ddns.info</a></li>
-            </ul>
-        </div>
+<article>
+    <?php h1('Personendaten') ?>
 
-        <h1>Ausbildung</h1>
+    <ul>
+    <?php 
+        $w = 0.3;
+        columns('<li>Voller Name',  'Szymon Walter</li>', $w);
+        columns('<li>Geburtsdatum', '18 April 1998</li>', $w);
+        columns('<li>Geburtsort',   'Breslau</li>', $w);
+        columns('<li>Nationalität', 'Polnisch</li>', $w);
+        columns('<li>e-Mail',     '<a href="mailto:walter.szymon.98@gmail.com">
+                                   walter.szymon.98@gmail.com</a></li>', $w);
+        columns('<li>Geschlecht', 'Male</li>', $w);
+        columns('<li>Website',    '<a href="https://driftinginyellow.tk">
+                                   driftinginyellow.tk</a></li>', $w);
+    ?>
+    </ul>
 
-        <div style="float:left;width:50%;">
-            <ul style="list-style-type:none">
-                <li>Szkoła podstawowa w Czerniawie</li>
-                <li>Szkoła podstawowa w Smolniku</li>
-                <li>Scharmützelsee-Grundschule</li>
-                <li>Katharina Heinroth Grundschule</li>
-                <li>Robert-Jungk-Oberschule</li>
-            </ul>
-        </div>
+    <?php h1('Bildung') ?>
 
-        <div style="float:right;width:50%;">
-            <ul style="list-style-type:none">
-                <li>2005 - 2006</li>
-                <li>2006 - 2008</li>
-                <li>2008 - 2009</li>
-                <li>2009 - 2011</li>
-                <li>2011 - 2017</li>
-            </ul>
-        </div>
+    <ul>
+    <?php 
+        $w = 0.5;
+        columns('<li>Szkoła podstawowa w Czerniawie', '2005 - 2006</li>', $w);
+        columns('<li>Szkoła podstawowa w Smolniku',   '2006 - 2008</li>', $w);
+        columns('<li>Scharmützelsee-Grundschule',     '2008 - 2009</li>', $w);
+        columns('<li>Katharina Heinroth Grundschule', '2009 - 2011</li>', $w);
+        columns('<li>Robert-Jungk-Oberschule',        '2011 - 2017</li>', $w);
+    ?>
+    </ul>
 
-        <h1>Erfahrungen</h1>
+    <?php h1('Erfahrungen') ?>
 
-        <ul style="list-style-type:none">
-            <li>8 mal Ludum Dare Teilnehmer</li>
-            <ul style="list-style-type:none">
-                <li>6 mal compo (alone)</li>
-                <li>1 mal jam (alone)</li>
-                <li>1 mal jam (team)</li>
-            </ul>
+    <ul>
+        <li>8 mal Ludum Dare Teilnehmer</li>
+        <ul>
+            <li>6 mal compo (alein)</li>
+            <li>1 mal jam (alein)</li>
+            <li>1 mal jam (team)</li>
         </ul>
+    </ul>
 
-        <h1>Fähigkeiten</h1>
+    <?php h1('Fähigkeiten') ?>
 
-        <div style="float:left;width:30%;">
-            <ul style="list-style-type:none">
-                <li>LibreOffice</li>
-                <li>Git</li>
-                <li>Blender</li>
-                <li>GIMP</li>
-                <li>Inkscape</li>
-            </ul>
-        </div>
+    <?php h2('Allgemein') ?>
 
-        <div style="float:right;width:70%;">
-            <ul style="list-style-type:none">
-                <li>Kompetent</li>
-                <li>Kompetent</li>
-                <li>Anfänger</li>
-                <li>Anfänger</li>
-                <li>Anfänger</li>
-            </ul>
-        </div>
+    <ul>
+        <li>Problemlösung</li>
+        <li>Zwischenmenschliche Fähigkeiten</li>
+        <li>Kreativität in der Arbeit</li>
+        <li>Zusammenarbeit über all</li>
+    </ul>
 
-        <h3>Languages</h3>
+    <?php h2('Sprachen') ?>
 
-        <div style="float:left;width:30%;">
-            <ul style="list-style-type:none">
-                <li>Polish</li>
-                <li>German</li>
-                <li>English</li>
-            </ul>
-        </div>
+    <ul>
+    <?php 
+        $w = 0.3;
+        columns('<li>Polnisch', 'Muttersprache</li>', $w);
+        columns('<li>Deutsch',  'Fliesend</li>', $w);
+        columns('<li>Englisch', 'Fliesend</li>', $w);
+    ?>
+    </ul>
 
-        <div style="float:right;width:70%;">
-            <ul style="list-style-type:none">
-                <li>Muttersprache</li>
-                <li>Fließend</li>
-                <li>Fließend</li>
-            </ul>
-        </div>
+    <?php h2('Computer orientiert') ?>
 
-        <h3>Programming</h3>
+    <ul>
+    <?php 
+        $w = 0.3;
+        columns('<li>LibreOffice', 'Kompetent</li>', $w);
+        columns('<li>Git',         'Kompetent</li>', $w);
+        columns('<li>Blender',     'Anfänger</li>', $w);
+        columns('<li>GIMP',        'Kompetent</li>', $w);
+        columns('<li>Inkscape',    'Anfänger</li>', $w);
+    ?>
+    </ul>
 
-        <div style="float:left;width:30%;">
-            <ul style="list-style-type:none">
-                <li>C/C++</li>
-                <li>Rust</li>
-                <li>Haskell</li>
-                <li>Python</li>
-                <li>Lua</li>
-                <li>Bash</li>
-            </ul>
-        </div>
+    <?php h3('Programmieren') ?>
 
-        <div style="float:right;width:70%;">
-            <ul style="list-style-type:none">
-                <li>Intermediär</li>
-                <li>Intermediär</li>
-                <li>Anfänger</li>
-                <li>Intermediär</li>
-                <li>Erfahren</li>
-                <li>Anfänger</li>
-            </ul>
-        </div>
+    <ul>
+    <?php 
+        $w = 0.3;
+        columns('<li>C/C++',        'Intermediär</li>', $w);
+        columns('<li>Rust',         'Kompetent</li>', $w);
+        columns('<li>Haskell',      'Anfänger</li>',$w);
+        columns('<li>Python',       'Intermediär</li>',  $w);
+        columns('<li>Lua',          'Erfahren</li>', $w);
+        columns('<li>Bash',         'Anfänger</li>', $w);
+        columns('<li>HTML/CSS/PHP', 'Kompetent</li>',   $w);
+        columns('<li>SQL',          'Kompetent</li>', $w);
+    ?>
+    </ul>
 
-        <h1>Interessen</h1>
-        <ul style="list-style-type:none">
-            <li>Informatik</li>
-            <ul style="list-style-type:none">
-                <li>Backend programming</li>
-                <li>Systems programming</li>
-                <li>Spieleenticklung</li>
-            </ul>
-            <li>Mathematik</li>
-            <li>Physik</li>
-            <li>Spiele</li>
-            <ul style="list-style-type:none">
-                <li>Brettspiele &amp; Computerspiele</li>
-            </ul>
-            <li>Filme</li>
+    <?php h1('Interessen') ?>
+    <ul>
+        <li>Informatik</li>
+        <ul>
+            <li>Backend programming</li>
+            <li>Systems programming</li>
+            <li>Spieleentwicklung</li>
         </ul>
-    </article>
-</body>
-</html>
+        <li>Mathematik</li>
+        <li>Physik</li>
+        <li>Spiele</li>
+        <ul>
+            <li>Brettspiele &amp; Computerspiele</li>
+        </ul>
+        <li>Filme</li>
+    </ul>
+</article>
+
+<?php
+include $template['footer'];
+?>
