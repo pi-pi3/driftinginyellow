@@ -26,9 +26,9 @@ function md_tohtml($text) {
     $text = md_replace('/^[\t ]*(?:\d\.|[+\-*])(.+(?:\n(?:\t+| {3,}).+)*)/m',
                        'md_list', $text);
 
-    $text = md_replace('/```((?:(?:.*\n)*?))```/', 'md_codeblock', $text);
+    $text = md_replace('/((?:.+\n?)+)/m', 'md_par', $text);
 
-    $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)/m', 'md_par', $text);
+    $text = md_replace('/```((?:(?:.*\n)*?))```/', 'md_codeblock', $text);
     $text = md_replace('/`(.*?)`/', 'md_code', $text);
 
     $text = md_replace('/(?<=[^\\\\])\*\*(.*?[^\\\\])\*\*/', 'md_bold', $text);
