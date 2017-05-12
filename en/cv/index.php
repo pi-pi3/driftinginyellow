@@ -13,7 +13,7 @@ include $template['header'];
 <article>
     <?php h1('Personal details') ?>
 
-    <ul>
+    <ul class="list-none">
     <?php 
         $w = 0.3;
         columns('<li>Full name',   'Szymon Walter</li>', $w);
@@ -30,7 +30,7 @@ include $template['header'];
 
     <?php h1('Education') ?>
 
-    <ul>
+    <ul class="list-none">
     <?php 
         $w = 0.5;
         columns('<li>Szkoła podstawowa w Czerniawie', '2005 - 2006</li>', $w);
@@ -43,9 +43,9 @@ include $template['header'];
 
     <?php h1('Experiences') ?>
 
-    <ul>
+    <ul class="list-none">
         <li>8 time Ludum Dare participant</li>
-        <ul>
+        <ul class="list-none">
             <li>6 times compo (alone)</li>
             <li>1 times jam (alone)</li>
             <li>1 times jam (team)</li>
@@ -56,7 +56,7 @@ include $template['header'];
 
     <?php h2('General') ?>
 
-    <ul>
+    <ul class="list-none">
         <li>Problem solving</li>
         <li>Interpersonal abilities</li>
         <li>Creativity in work</li>
@@ -65,7 +65,7 @@ include $template['header'];
 
     <?php h2('Languages') ?>
 
-    <ul>
+    <ul class="list-none">
     <?php 
         $w = 0.3;
         columns('<li>Polish', 'Native</li>', $w);
@@ -76,7 +76,7 @@ include $template['header'];
 
     <?php h2('Computer related') ?>
 
-    <ul>
+    <ul class="list-none">
     <?php 
         $w = 0.3;
         columns('<li>LibreOffice', 'Proficient</li>', $w);
@@ -89,7 +89,7 @@ include $template['header'];
 
     <?php h3('Programming') ?>
 
-    <ul>
+    <ul class="list-none">
     <?php 
         $w = 0.3;
         columns('<li>C/C++',        'Intermediate</li>', $w);
@@ -104,9 +104,9 @@ include $template['header'];
     </ul>
 
     <?php h1('Interests') ?>
-    <ul>
+    <ul class="list-none">
         <li>Computer sciences</li>
-        <ul>
+        <ul class="list-none">
             <li>Backend programming</li>
             <li>Systems programming</li>
             <li>Game development</li>
@@ -114,7 +114,7 @@ include $template['header'];
         <li>Mathematics</li>
         <li>Physics</li>
         <li>Games</li>
-        <ul>
+        <ul class="list-none">
             <li>Board games &amp; video games</li>
         </ul>
         <li>Films</li>

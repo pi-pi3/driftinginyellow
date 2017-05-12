@@ -144,6 +144,14 @@ aside {
     padding: 0;
 }
 
+.list-none {
+    list-style-type: none;
+}
+
+.list-square {
+    list-style-type: square;
+}
+
 .verbatim {
     font-family: monospace;
 }
