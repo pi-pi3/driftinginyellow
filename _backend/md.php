@@ -23,20 +23,22 @@ function md_tohtml($text) {
                        'md_ordered', $text);
     $text = md_replace('/^[\t ]*(([+\-*](?:[\t ]+).*(?:\n(?: {3,}.+))*\n?)+)/m',
                        'md_unordered', $text);
-    $text = md_replace('/^[\t ]*(?:\d\.|[+\-*])([^\s+\-*]+' . 
-                       '(?:\n(?:\t+| {3,}).+)*)/m', 'md_list', $text);
+    $text = md_replace('/^[\t ]*(?:\d\.|[+\-*])(.+(?:\n(?:\t+| {3,}).+)*)/m', 'md_list', $text);
+
+    $text = md_replace('/```((?:(?:.*\n)*?))```/', 'md_codeblock', $text);
 
     $text = md_replace('/^([^\n<]+(?:\n[^\n<]+)*)/m', 'md_par', $text);
+    $text = md_replace('/`(.*?)`/', 'md_code', $text);
 
-    $text = md_replace('/(?<=[^\])\*\*(.*?[^\])\*\*/', 'md_bold', $text);
-    $text = md_replace('/(?<=[^\])__(.*?[^\])__/', 'md_bold', $text);
-    $text = md_replace('/(?<=[^\])\*(.*?[^\])\*/', 'md_emph', $text);
-    $text = md_replace('/(?<=[^\])_(.*?[^\])_/', 'md_emph', $text);
-    $text = md_replace('/(?<=[^\])\~\~(.*?[^\])\~\~/', 'md_strike', $text);
+    $text = md_replace('/(?<=[^\\\\])\*\*(.*?[^\\\\])\*\*/', 'md_bold', $text);
+    $text = md_replace('/(?<=[^\\\\])__(.*?[^\\\\])__/', 'md_bold', $text);
+    $text = md_replace('/(?<=[^\\\\])\*(.*?[^\\\\])\*/', 'md_emph', $text);
+    $text = md_replace('/(?<=[^\\\\])_(.*?[^\\\\])_/', 'md_emph', $text);
+    $text = md_replace('/(?<=[^\\\\])\~\~(.*?[^\\\\])\~\~/', 'md_strike', $text);
 
-    $text = md_replace('/(?<=[^\])\\\*/', 'md_star', $text);
-    $text = md_replace('/(?<=[^\])\_/', 'md_underscore', $text);
-    $text = md_replace('/(?<=[^\])\~/', 'md_tilde', $text);
+    $text = md_replace('/(?<=[^\\\\])\\\\\*/', 'md_star', $text);
+    $text = md_replace('/(?<=[^\\\\])\_/', 'md_underscore', $text);
+    $text = md_replace('/(?<=[^\\\\])\~/', 'md_tilde', $text);
 
     $text = md_replace('/\[(.*?)\]:(.*)/', 'md_ref', $text);
 
@@ -47,13 +49,7 @@ function md_tohtml($text) {
     $text = md_replace('/\[(.*?)\]\[(.*?)\]/', 'md_linkref', $text);
     $text = md_replace('/\[(.*?)\]/', 'md_reflink', $text);
 
-    $text = md_replace('/`(.*?)`/', 'md_code', $text);
-    $text = md_replace('/```((?:.*\n)*?)```/', 'md_code', $text);
-
     $text = md_replace('/^>(.*)/m', 'md_blockquote', $text);
-
-    $text = md_replace('/\|(?:.*\|)*\n-{3,}/', 'md_tableh', $text);
-    $text = md_replace('/\|(?:.*\|)*/', 'md_table', $text);
 
     $text = md_replace('/^[\-*_]{3,}$/m', 'md_rule', $text);
 
@@ -203,26 +199,7 @@ function md_code($text) {
 
 function md_codeblock($text) {
     $text = htmlspecialchars($text);
-    return "<div class=\"verbatim\">$text</div>";
-}
-
-function md_tableh($items) {
-    $items = preg_replace('/-+/', '', $items);
-    $result = md_table($items);
-
-    return $result;
-}
-
-function md_table($items) {
-    $items = trim($items);
-
-    $result = '';
-    foreach (explode($items, '|') as $item) {
-        $item = trim($item);
-        $result = $result . "<td>$item</td>";
-    }
-
-    return $result;
+    return "<pre><div class=\"verbatim\">$text</div></pre>";
 }
 
 function md_quote($text) {
