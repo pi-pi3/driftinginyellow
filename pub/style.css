@@ -50,10 +50,6 @@ article {
     margin-bottom: 1em;
 }
 
-article ul {
-    list-style-type: none;
-}
-
 header {
     margin-bottom: 1ex;
 }
@@ -146,4 +142,8 @@ aside {
     float: right;
     margin: 0;
     padding: 0;
+}
+
+.verbatim {
+    font-family: monospace;
 }
