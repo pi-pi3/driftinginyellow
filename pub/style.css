@@ -31,6 +31,16 @@ a {
     /*padding: 0.5ex;*/
 }
 
+a.space::after {
+    content: "  ";
+    white-space: pre;
+}
+
+a.space::before {
+    content: "  ";
+    white-space: pre;
+}
+
 a[href] {
     color: #003072;
 }
