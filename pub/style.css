@@ -31,12 +31,12 @@ a {
     /*padding: 0.5ex;*/
 }
 
-a.space::after {
+a[href]::after {
     content: "  ";
     white-space: pre;
 }
 
-a.space::before {
+a[href]::before {
     content: "  ";
     white-space: pre;
 }
