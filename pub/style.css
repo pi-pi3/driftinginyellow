@@ -123,6 +123,7 @@ aside {
     float: left;
     width: 72.5%;
     margin: 1.25%;
+    text-align: justify;
 }
 
 #footer {
@@ -154,4 +155,5 @@ aside {
 
 .verbatim {
     font-family: monospace;
+    background-color: #e0e0e0;
 }
