@@ -28,11 +28,11 @@ include $template['header'];
         <a href="https://github.com/redox-os/redox">OS</a>.
     </p>
     <p>
-        Now I've made this project: a full-featured server with HTTP/-S, IMAP,
-        POP3, SMTP and of course SSH. I also have the possibility to host some
-        game servers, like Minecraft, Team Fortress 2 and Unturned. All in my
-        bedroom, for <s>free</s> $15/year + electricity costs + internet costs,
-        all without professional help.
+        Now I've made this project: a full-featured server with HTTP/-S, IMAP/-S
+        with TLS/SASL, POP3, SMTP and of course SSH. I also have the possibility
+        to host some game servers, like Minecraft, Team Fortress 2 or Unturned.
+        All in my bedroom, for <s>free</s> $15/year + electricity costs +
+        internet costs, all without professional help.
     </p>
 </article>
 
@@ -64,32 +64,41 @@ include $template['header'];
     </aside>
     </header>
     <p>
-    <ul style="list-style-type:none">
+    <ul class="list-none">
         <li>intel i5 3330 Quad Core 3.3GHz</li>
         <li>12GB working memory</li>
-        <ul style="list-style-type:none">
+        <ul class="list-none">
             <li>20GB swap</li>
         </ul>
         <li>1TB hard drive storage</li>
-        <ul style="list-style-type:none">
+        <ul class="list-none">
             <li>~850GiB available</li>
         </ul>
         <li>ArchLinux</li>
-        <ul style="list-style-type:none">
-            <li>linux 4.10.11-1</li>
+        <ul class="list-none">
+            <li>linux 4.10.13-1</li>
             <li>no systemd</li>
             <li>OpenRC/sysV init</li>
         </ul>
         <li>supported protocols and services</li>
-        <ul style="list-style-type:none">
+        <ul class="list-none">
             <li>HTTP/-S</li>
             <li>SSH</li>
+            <li>IMAP/-S</li>
+            <li>POP3</li>
+            <li>SMTP</li>
             <li>GIT (WIP)</li>
-            <li>POP3 (WIP)</li>
-            <li>IMAP (WIP)</li>
-            <li>SMTP (WIP)</li>
         </ul>
-        <li>SSL certificate supplied by certbot from Let's encrypt</li>
+        <li>Web specifications</li>
+        <ul class="list-none">
+            <li>Modern HTML 5</li>
+            <li>PHP7</li>
+            <ul class="list-none">
+                <li>completely self-baked backend</li>
+            </ul>
+            <li>SQLite3</li>
+        </ul>
+        <li>HTTPS SSL certificate supplied by certbot from Let's encrypt</li>
     </ul>
     </p>
 </article>
