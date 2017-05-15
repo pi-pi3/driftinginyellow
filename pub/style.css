@@ -31,13 +31,13 @@ a {
     /*padding: 0.5ex;*/
 }
 
-a[href]::after {
-    content: "  ";
+a.space::after {
+    content: " ";
     white-space: pre;
 }
 
-a[href]::before {
-    content: "  ";
+a.space::before {
+    content: " ";
     white-space: pre;
 }
 

@@ -142,7 +142,7 @@ function md_linebreak() {
 function md_link($str, $link) {
     $str = trim($str);
     $link = trim($link);
-    return "<a href=\"$link\">$str</a>";
+    return "<a class=\"space\" href=\"$link\">$str</a>";
 }
 
 function md_linkref($str, $ref) {
@@ -160,7 +160,7 @@ function md_linkref($str, $ref) {
 }
 
 function md_reflink($ref) {
-    return md_linkref($ref, ref);
+    return md_linkref($ref, $ref);
 }
 
 function md_ref($ref, $str) {
