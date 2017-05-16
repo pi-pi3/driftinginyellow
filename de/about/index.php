@@ -1,10 +1,10 @@
 <?php
-$lang = 'en';
+$lang = 'de';
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/visual.php';
 
-$page['subtitle'] = 'About';
+$page['subtitle'] = 'Ůber mich';
 $page['name'] = 'about';
 
 include $template['header'];
