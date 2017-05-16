@@ -28,9 +28,9 @@ include $template['header'];
         <a href="https://github.com/redox-os/redox">OS</a>.
     </p>
     <p>
-        Now I've made this project: a full-featured server with HTTP/-S, IMAP/-S
-        with TLS/SASL, POP3, SMTP and of course SSH. I also have the possibility
-        to host some game servers, like Minecraft, Team Fortress 2 or Unturned.
+        Now I've made this project: a full-featured server with HTTP/-S,
+        IMAP/-S, SMTP and of course SSH. I also have the possibility to host
+        some game servers, like Minecraft, Team Fortress 2 or Unturned.
         All in my bedroom, for <s>free</s> $15/year + electricity costs +
         internet costs, all without professional help.
     </p>
@@ -85,7 +85,6 @@ include $template['header'];
             <li>HTTP/-S</li>
             <li>SSH</li>
             <li>IMAP/-S</li>
-            <li>POP3</li>
             <li>SMTP</li>
             <li>GIT (WIP)</li>
         </ul>
