@@ -4,7 +4,7 @@ $lang = 'de';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/preload.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/_backend/visual.php';
 
-$page['subtitle'] = 'Ůber mich';
+$page['subtitle'] = 'Über mich';
 $page['name'] = 'about';
 
 include $template['header'];
