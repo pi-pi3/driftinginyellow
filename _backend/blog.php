@@ -134,9 +134,18 @@ if (array_key_exists('id', $_GET)) {
     render_article($id, $blog_table, true);
 } else {
     $nav_print = 0;
-
     $query = $db['www']->query("select id, title from $blog_table
                                 order by time desc, pinned desc");
+
+    if (array_key_exists('tags', $_GET)) {
+        $tags = SQLite3::escapeString(trim($_GET['tags']));
+        if ($tags != ',') {
+            $query = $db['www']->query("select id, title from $blog_table
+                                        where tags like '%$tags%'
+                                        order by time desc, pinned desc");
+        }
+    }
+
     if ($query) {
         while ($row = $query->fetchArray()) {
             if ($row['title']) {
