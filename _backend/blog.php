@@ -120,13 +120,14 @@ function render_article($id, $table, $full = false) {
 }
 
 if (array_key_exists('id', $_GET)) {
-    $id = SQLite3::escapeString(trim($_GET['id']));
+    $id = $_GET['id'];
 
     // Protect against id=%00
     if (strstr($id, "\0")) {
-        $id = htmlspecialchars($_GET['id']);
+        $id = htmlspecialchars($id);
         echo "Error: invalid id '$id'";
     } else {
+        $id = SQLite3::escapeString(trim($id));
         $views = $db['www']->query("select views from $blog_table
                                     where id = '$id'");
         if ($views) {
