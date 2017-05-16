@@ -125,6 +125,8 @@ if (array_key_exists('id', $_GET)) {
     // Protect against id=%00
     if (strstr($id, "\0")) {
         $id = htmlspecialchars($id);
+        $id = preg_replace("/\\0/", '%00', $id); // Replace every null-character
+                                                 // with the string '%00'
         echo "Error: invalid id '$id'";
     } else {
         $id = SQLite3::escapeString(trim($id));
