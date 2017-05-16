@@ -88,10 +88,10 @@ function render_article($id, $table, $full = false) {
     echo $header;
 
     if (!$query['hide_meta']) {
-	if ($query['pinned']) {
+    if ($query['pinned']) {
             echo "<p style=\"font-size:90%;padding:0 0.5ex;
                   margin-bottom:-1.5ex;\">Pinned</p>";
-	}
+    }
         echo "<p style=\"font-size: 75%\">$time<br>$date<br>";
         echo "A $minutes $m read</p>";
     }
@@ -106,7 +106,7 @@ function render_article($id, $table, $full = false) {
     $views = $db['www']->query("select views from $table
                                 where id = '$id'");
     if ($views) {
-    	$views = $views->fetchArray()['views'];
+        $views = $views->fetchArray()['views'];
         echo "<p style=\"font-size: 75%\">$views views</p>";
     }
 
@@ -120,18 +120,25 @@ function render_article($id, $table, $full = false) {
 }
 
 if (array_key_exists('id', $_GET)) {
-    $id = SQLite3::escapeString($_GET['id']);
-    $views = $db['www']->query("select views from $blog_table
-                                where id = '$id'");
-    if ($views) {
-    	$views = $views->fetchArray()['views'];
-    	if (isset($views)) {
-    	    $views = intval($views)+1;
-    	    $db['www']->exec("update $blog_table set views = $views
-    	                      where id = '$id'");
-    	}
+    $id = SQLite3::escapeString(trim($_GET['id']));
+
+    // Protect against id=%00
+    if (strstr($id, "\0")) {
+        $id = htmlspecialchars($_GET['id']);
+        echo "Error: invalid id '$id'";
+    } else {
+        $views = $db['www']->query("select views from $blog_table
+                                    where id = '$id'");
+        if ($views) {
+            $views = $views->fetchArray()['views'];
+            if (isset($views)) {
+                $views = intval($views)+1;
+                $db['www']->exec("update $blog_table set views = $views
+                                  where id = '$id'");
+            }
+        }
+        render_article($id, $blog_table, true);
     }
-    render_article($id, $blog_table, true);
 } else {
     $nav_print = 0;
     $query = $db['www']->query("select id, title from $blog_table
