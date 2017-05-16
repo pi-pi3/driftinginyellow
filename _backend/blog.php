@@ -47,7 +47,8 @@ function render_article($id, $table, $full = false) {
     $query = $db['www']->query("select * from $table where id = '$id'");
     $query = $query->fetchArray();
     if (!$query || !isset($query['id'])) {
-        echo "Error: id $id not found in database";
+        $id = htmlspecialchars($id);
+        echo "Error: id '$id' not found in database";
         return;
     }
 
@@ -59,7 +60,8 @@ function render_article($id, $table, $full = false) {
     $handle = fopen($filename, 'r');
 
     if (!$handle) {
-        echo "Error: file $filename not found in document root";
+        $filename = htmlspecialchars($filename);
+        echo "Error: file '$filename' not found in document root";
         return;
     }
 
