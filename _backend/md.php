@@ -50,7 +50,7 @@ function md_tohtml($text) {
 
     $text = md_replace('/\[(.*?)\]\((.*?)\)/', 'md_link', $text);
     $text = md_replace('/\[(.*?)\]\[(.*?)\]/', 'md_linkref', $text);
-    $text = md_replace('/\[(.*?)\]/', 'md_reflink', $text);
+    #$text = md_replace('/\[(.*?)\]/', 'md_reflink', $text);
 
     $text = md_replace('/^>(.*)/m', 'md_blockquote', $text);
 
