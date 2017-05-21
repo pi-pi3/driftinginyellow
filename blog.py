@@ -3,6 +3,7 @@
 import sys
 import argparse
 import sqlite3
+import time
 
 def main():
     parser = argparse.ArgumentParser(description='Blog helper for drifting in\
@@ -84,14 +85,21 @@ def main():
         print('error: No Path was specified.')
         return
 
+    timestamp = time.localtime()
+
     db = sqlite3.connect('.db/{}/www.db'.format(lang))
     c = db.cursor()
     if not args.update:
-        # TODO: time
-        c.execute("insert into {} values ('{}', '{}', {}, {}, {}, '{}',
-                   {}, '{}')".format())
+        c.execute("insert into {} values ('{}', {}, '{}', {}, {}, {},
+                   '{}', '{}')".format(table, art_id, timestamp, path, 1 if pinned else 0, 
+                                       1 if hide_meta else 0, 'null', tags, title))
     else:
-        pass
+        # TODO: don't update what's unchanged
+        c.execute("update {} set pinned = {}, hide_meta = {}, last_edited = {},
+                   tags = '{}', title = '{}' where id = '{}'".format(table, pinned, hide_meta,
+                                     timestamp, tags, title, art_id))
+    db.commit()
+    db.close()
 
 if __name__ == '__main__':
     main()
