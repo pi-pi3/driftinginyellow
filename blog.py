@@ -90,14 +90,14 @@ def main():
     db = sqlite3.connect('.db/{}/www.db'.format(lang))
     c = db.cursor()
     if not args.update:
-        c.execute("insert into {} values ('{}', {}, '{}', {}, {}, {},
+        c.execute("insert into {} values ('{}', {}, '{}', {}, {}, {},\
                    '{}', {}, '{}')"
                    .format(table, art_id, timestamp, path,
                            1 if pinned else 0, 1 if hide_meta else 0,
                            'null', tags, 0, title))
     else:
         # TODO: don't update what's unchanged
-        c.execute("update {} set pinned = {}, hide_meta = {}, last_edited = {},
+        c.execute("update {} set pinned = {}, hide_meta = {}, last_edited = {},\
                    tags = '{}', title = '{}' where id = '{}'"
                    .format(table, pinned, hide_meta,
                            timestamp, tags, title, art_id))
