@@ -80,8 +80,7 @@ stack. Do note that this call also be used with all the built-in types, like
 I've started doing some work on the built-in URI type as well as writing a
 better API support for it. Now it's even more omnipresent!
 
-## Problematic things:
 ### meta-macro
 
 I know I still haven't explained what it is, but bear with me. All I'll tell
-for now is it's not remotely functional as of now.
+for now is the core is somewhat functional at this point, but not yet usable.
