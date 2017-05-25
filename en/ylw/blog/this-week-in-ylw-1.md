@@ -63,13 +63,9 @@ an enum used for boolean operations.
 Even though structs and enums can already be declared, they can't be
 instantiated yet. However, once it's done, the syntax will look like this.
 
-```
-# struct
-type://Foo 1 2.0 "3"
-
-# enum with a pseudo-type called Baz
-type://Bar/Baz 1 2.0 "3"
-```
+`type://Foo 1 2.0 "3"` would be used for creating a new struct of type `Foo`.
+`type://Bar/Baz 1 2.0 "3"` would be used for creating a new instance of the 
+pseudo-type `Baz` from the enum `Bar`.
 
 This operation creates a new instance of a type and pushes it onto the data
 stack. Do note that this call also be used with all the built-in types, like
