@@ -31,49 +31,53 @@ def main():
     art_id = None # required
     title = None  # required
     path = None   # required
-    pinned = False
-    hide_meta = False
+    pinned = 0
+    hide_meta = 0
     tags = ''
     if args.file:
         for line in args.file:
             if len(line) == 1:
                 break
             elif line.startswith('Lang: '):
-                lang = line.split(' ', maxsplit=1)[1]
+                lang = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Table: '):
-                table = line.split(' ', maxsplit=1)[1]
+                table = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('ID: '):
-                art_id = line.split(' ', maxsplit=1)[1]
+                art_id = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Title: '):
-                title = line.split(' ', maxsplit=1)[1]
+                title = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Path: '):
-                path = line.split(' ', maxsplit=1)[1]
+                path = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Tags: '):
-                tags = line.split(' ', maxsplit=1)[1]
+                tags = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Pinned'):
-                path = True
+                path = 1
             elif line.startswith('HideMeta'):
-                hide_meta = True
+                hide_meta = 1
     if args.stdin:
+        print( '''
+Required fields: ID, Title, Path
+Optional fields: Lang, Table, Pinned (bool), HideMeta (bool),
+                 Tags''')
         for line in sys.stdin:
             if len(line) == 1:
                 break
             elif line.startswith('Lang: '):
-                lang = line.split(' ', maxsplit=1)[1]
+                lang = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Table: '):
-                table = line.split(' ', maxsplit=1)[1]
+                table = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('ID: '):
-                art_id = line.split(' ', maxsplit=1)[1]
+                art_id = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Title: '):
-                title = line.split(' ', maxsplit=1)[1]
+                title = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Path: '):
-                path = line.split(' ', maxsplit=1)[1]
+                path = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Tags: '):
-                tags = line.split(' ', maxsplit=1)[1]
+                tags = line.split(' ', maxsplit=1)[1][:-1]
             elif line.startswith('Pinned'):
-                path = True
+                path = 1
             elif line.startswith('HideMeta'):
-                hide_meta = True
+                hide_meta = 1
 
     if not art_id:
         print('error: No ID was specified.')
@@ -85,7 +89,7 @@ def main():
         print('error: No Path was specified.')
         return
 
-    timestamp = time.localtime()
+    timestamp = int(time.mktime(time.localtime()))
 
     db = sqlite3.connect('.db/{}/www.db'.format(lang))
     c = db.cursor()
@@ -93,7 +97,7 @@ def main():
         c.execute("insert into {} values ('{}', {}, '{}', {}, {}, {},\
                    '{}', {}, '{}')"
                    .format(table, art_id, timestamp, path,
-                           1 if pinned else 0, 1 if hide_meta else 0,
+                           pinned, hide_meta,
                            'null', tags, 0, title))
     else:
         # TODO: don't update what's unchanged
