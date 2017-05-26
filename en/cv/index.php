@@ -61,6 +61,7 @@ include $template['header'];
         <li>Interpersonal abilities</li>
         <li>Creativity in work</li>
         <li>Collaboration over all</li>
+        <li>(very) Quick learner</li>
     </ul>
 
     <?php h2('Languages') ?>
