@@ -92,14 +92,14 @@ include $template['header'];
     <ul class="list-none">
     <?php 
         $w = 0.3;
-        columns('<li>C/C++',        'Intermediate</li>', $w);
-        columns('<li>Rust',         'Intermediate</li>', $w);
-        columns('<li>Haskell',      'Beginner</li>',$w);
-        columns('<li>Python',       'Intermediate</li>',  $w);
-        columns('<li>Lua',          'Advanced</li>', $w);
-        columns('<li>Bash',         'Beginner</li>', $w);
-        columns('<li>HTML/CSS/PHP', 'Proficient</li>',   $w);
-        columns('<li>SQL',          'Beginner</li>', $w);
+        columns('<li>C/C++',        'Intermediate (2 years)</li>', $w);
+        columns('<li>Rust',         'Intermediate (&lt;1 year)</li>', $w);
+        columns('<li>Haskell',      'Beginner (&lt;1 years)</li>',$w);
+        columns('<li>Python',       'Intermediate (1~2 years)</li>',  $w);
+        columns('<li>Lua',          'Advanced (2 years)</li>', $w);
+        columns('<li>Bash',         'Beginner (1~2 years)</li>', $w);
+        columns('<li>HTML/CSS/PHP', 'Proficient (4 weeks)</li>',   $w);
+        columns('<li>SQL',          'Beginner (&lt;1 years)</li>', $w);
     ?>
     </ul>
 
