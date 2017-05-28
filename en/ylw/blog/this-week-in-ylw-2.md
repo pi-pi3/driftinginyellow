@@ -17,7 +17,7 @@ The three biggest changes are the three new vm instructions. They are: `decl`,
 used for instantiating types. However, it isn't written explicitly in llr. It's
 use as following.
 
-`type://Foo 1 2.0 "3" <br>
+`type://Foo 1 2.0 "3"` <br>
 `type://core/Integer 1` <br>
 `type://some/Type arg1 arg2 argn` <br>
 `type://some/Enum/Variant arg1 arg2 argn` <br>
