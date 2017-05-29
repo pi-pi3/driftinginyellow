@@ -21,7 +21,9 @@ include $template['header'];
     <ul>
     <?php 
         $w = 0.3;
-        columns('<li>e-Mail', '<a href="mailto:walter.szymon.98@gmail.com">
+        columns('<li>e-Mail 1', '<a href="mailto:wls@driftinginyellow.tk">
+                                wls@driftinginyellow.tk</a></li>', $w);
+        columns('<li>e-Mail 2', '<a href="mailto:walter.szymon.98@gmail.com">
                                 walter.szymon.98@gmail.com</a></li>', $w);
         columns('<li>Twitter', '<a href="https://twitter.com/pi_pi314">
                                 @pi_pi314</a></li>', $w);

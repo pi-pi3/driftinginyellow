@@ -61,6 +61,7 @@ include $template['header'];
         <li>Zwischenmenschliche Fähigkeiten</li>
         <li>Kreativität in der Arbeit</li>
         <li>Zusammenarbeit über all</li>
+        <li>(sehr) Schneller Lerner</li>
     </ul>
 
     <?php h2('Sprachen') ?>
@@ -92,14 +93,15 @@ include $template['header'];
     <ul class="list-none">
     <?php 
         $w = 0.3;
-        columns('<li>C/C++',        'Intermediär</li>', $w);
-        columns('<li>Rust',         'Kompetent</li>', $w);
-        columns('<li>Haskell',      'Anfänger</li>',$w);
-        columns('<li>Python',       'Intermediär</li>',  $w);
-        columns('<li>Lua',          'Erfahren</li>', $w);
-        columns('<li>Bash',         'Anfänger</li>', $w);
-        columns('<li>HTML/CSS/PHP', 'Kompetent</li>',   $w);
-        columns('<li>SQL',          'Kompetent</li>', $w);
+        columns('<li>C/C++',        'Intermediär (2 Jahre)/li>', $w);
+        columns('<li>Rust',         'Kompetent (&lt;1 Jahr)</li>', $w);
+        columns('<li>Haskell',      'Anfänger (&lt;1 Jahr)</li>',$w);
+        columns('<li>Python',       'Intermediär (1~2 Jahre)</li>',  $w);
+        columns('<li>Lua',          'Erfahren (2 Jahre)</li>', $w);
+        columns('<li>Bash',         'Anfänger (1~2 Jahre)</li>', $w);
+        columns('<li>HTML/CSS/PHP', 'Kompetent (4 Wochen)</li>',   $w);
+        columns('<li>JavaScript',   'Anfänger (4 Wochen)</li>', $w);
+        columns('<li>SQL',          'Kompetent (&lt;1 Jahr)</li>', $w);
     ?>
     </ul>
 
