@@ -61,7 +61,7 @@ include $template['header'];
         <li>Zwischenmenschliche Fähigkeiten</li>
         <li>Kreativität in der Arbeit</li>
         <li>Zusammenarbeit über all</li>
-        <li>(sehr) Schneller Lerner</li>
+        <li>(sehr) Ausgesprochen lernfähig</li>
     </ul>
 
     <?php h2('Sprachen') ?>
