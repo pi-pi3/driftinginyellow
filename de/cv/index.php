@@ -93,7 +93,7 @@ include $template['header'];
     <ul class="list-none">
     <?php 
         $w = 0.3;
-        columns('<li>C/C++',        'Intermediär (2 Jahre)/li>', $w);
+        columns('<li>C/C++',        'Intermediär (2 Jahre)</li>', $w);
         columns('<li>Rust',         'Kompetent (&lt;1 Jahr)</li>', $w);
         columns('<li>Haskell',      'Anfänger (&lt;1 Jahr)</li>',$w);
         columns('<li>Python',       'Intermediär (1~2 Jahre)</li>',  $w);
