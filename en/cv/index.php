@@ -100,6 +100,7 @@ include $template['header'];
         columns('<li>Lua',          'Advanced (2 years)</li>', $w);
         columns('<li>Bash',         'Beginner (1~2 years)</li>', $w);
         columns('<li>HTML/CSS/PHP', 'Proficient (4 weeks)</li>',   $w);
+        columns('<li>JavaScript',   'Beginner (4 weeks)</li>',   $w);
         columns('<li>SQL',          'Beginner (&lt;1 years)</li>', $w);
     ?>
     </ul>
