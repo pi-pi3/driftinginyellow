@@ -13,20 +13,25 @@ include $template['header'];
 <article>
     <?php h1('Personal details') ?>
 
-    <ul class="list-none">
-    <?php 
-        $w = 0.3;
-        columns('<li>Full name',   'Szymon Walter</li>', $w);
-        columns('<li>Birth date',  '18th April 1998</li>', $w);
-        columns('<li>Birth place', 'Wrocław</li>', $w);
-        columns('<li>Nationality', 'Polish</li>', $w);
-        columns('<li>e-Mail',      '<a href="mailto:walter.szymon.98@gmail.com">
-                                    walter.szymon.98@gmail.com</a></li>', $w);
-        columns('<li>Sex',         'Male</li>', $w);
-        columns('<li>Website',     '<a href="https://driftinginyellow.tk">
-                                    driftinginyellow.tk</a></li>', $w);
-    ?>
-    </ul>
+    <div style="float:left;width:70%;">
+        <ul class="list-none">
+        <?php 
+            $w = 0.3;
+            columns('<li>Full name',   'Szymon Walter</li>', $w);
+            columns('<li>Birth date',  '18th April 1998</li>', $w);
+            columns('<li>Birth place', 'Wrocław</li>', $w);
+            columns('<li>Nationality', 'Polish</li>', $w);
+            columns('<li>e-Mail',      '<a href="mailto:walter.szymon.98@gmail.com">
+                                        walter.szymon.98@gmail.com</a></li>', $w);
+            columns('<li>Sex',         'Male</li>', $w);
+            columns('<li>Website',     '<a href="https://driftinginyellow.tk">
+                                        driftinginyellow.tk</a></li>', $w);
+        ?>
+        </ul>
+    </div>
+    <div style="float:right;width:30%;">
+        <img alt="Portait" src="/pub/portait.png">
+    </div>
 
     <?php h1('Education') ?>
 
